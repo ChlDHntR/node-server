@@ -88,8 +88,7 @@ export const runReader = (text) => {
   }
 
   if (!index) {
-    console.log('no result found')
-    return
+    return 'no result found'
   }
 
   let result = allDataObj.words[index].sense
@@ -99,3 +98,5 @@ export const runReader = (text) => {
 
   return answer
 }
+
+//console.log(runReader('挨拶')) // Example usage
