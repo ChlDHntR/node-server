@@ -10,30 +10,46 @@ const runWriter = () => {
     const words = obj.words
     //Write kanji only json
 
-    const keyMap = {}
+    //const keyMap = {}
+    const meaningArr = { words: [] }
 
+    // write kanji/kana file map
     words.forEach((entry, index) => {
-      if (entry.kanji[0]) {
-        entry.kanji.forEach((item) => {
-          if (keyMap[item.text]) {
-            keyMap[item.text].push(index)
-          } else {
-            keyMap[item.text] = [index]
-          }
-        })
-      }
       if (entry.kana[0]) {
-        entry.kana.forEach((item) => {
-          if (keyMap[item.text]) {
-            keyMap[item.text].push(index)
+        let kanaString = ''
+        entry.kana.forEach((item, index) => {
+          if (index < entry.kana.length - 1) {
+            kanaString += item.text + ', '
           } else {
-            keyMap[item.text] = [index]
+            kanaString += item.text
           }
         })
+        meaningArr.words[index] = kanaString
       }
     })
 
-    const jsonDat = JSON.stringify(keyMap)
+    // write meaning file
+    // words.forEach((entry, index) => {
+    //   if (entry.sense[0]) {
+    //     if (meaningArr.words[index] === undefined) {
+    //       meaningArr.words[index] = []
+    //     }
+    //     //gloss
+    //     entry.sense.forEach((item, index2) => {
+    //       let wordString = ''
+    //       item.gloss.forEach((element, index3) => {
+    //         if (index3 < item.gloss.length - 1) {
+    //           wordString += element.text + ' ,'
+    //         } else {
+    //           wordString += element.text
+    //         }
+    //       })
+    //       meaningArr.words[index].push(wordString)
+    //     })
+    //   }
+    // })
+
+    const jsonDat = JSON.stringify(meaningArr)
 
     //Write only first 200 entry
     // let retArr = []
@@ -51,7 +67,7 @@ const runWriter = () => {
     // })
     // const jsonDat = JSON.stringify({words: retArr})
 
-    fs.writeFile('./src/json/MapIndex.json', jsonDat, (err) => {
+    fs.writeFile('./src/json/kana-only.json', jsonDat, (err) => {
       if (err) {
         console.error(err)
 

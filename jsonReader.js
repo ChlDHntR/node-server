@@ -1,16 +1,18 @@
 import * as fs from 'fs'
 
-let kanjiData, allData, answer
+let kanjiData, allData, kanaData, answer
 
 try {
   kanjiData = fs.readFileSync('./src/json/MapIndex.json')
-  allData = fs.readFileSync('./src/json/jmdict-eng.json')
+  allData = fs.readFileSync('./src/json/meaning.json')
+  kanaData = fs.readFileSync('./src/json/kana-only.json')
 } catch (err) {
   console.error(err)
 }
 
 const kanjiDataObj = JSON.parse(kanjiData)
 const allDataObj = JSON.parse(allData)
+const kanaDataObj = JSON.parse(kanaData)
 
 const mapFunc = (arr, key) => {
   return arr.map((entry) => entry[key])
@@ -20,15 +22,7 @@ const mapFunc = (arr, key) => {
 const wordList = (array) => {
   let final = {}
   array.forEach((element, index) => {
-    let wordString = ''
-    element.forEach((elementSon, index) => {
-      if (index < element.length - 1) {
-        wordString += elementSon.text + ','
-      } else {
-        wordString += elementSon.text
-      }
-    })
-    final[index] = wordString
+    final[index] = element
   })
   return final
 }
@@ -64,9 +58,8 @@ export const runReader = (text) => {
 
   index = kanjiDataObj[text][0]
 
-  let kanaResult = allDataObj.words[index].kana.map((entry) => entry.text)
-  let result = allDataObj.words[index].sense
-  let ret = result.map((entry) => entry.gloss)
+  let kanaResult = kanaDataObj.words[index]
+  let ret = allDataObj.words[index]
 
   answer = {
     definition: wordList(ret),
