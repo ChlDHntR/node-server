@@ -1,0 +1,2001 @@
+@charset "UTF-8";
+@import "style-reset.css";
+@import "style-standard.css";
+@import "style-advance.css";
+
+/* -------------------------------------------------------------
+Windows でチェックするときは以下の指定を利用
+※チェックが済んだら必ず削除かコメントアウトすること
+@import "style-check.css";
+---------------------------------------------------------------- */
+
+
+
+/* ファイル情報
+----------------------------------------------------------------
+【内容】
+外部 CSS の一括読み込み と 作品別カスタマイズ指定
+
+【CSSファイルバージョン】
+ver.1.1.1
+
+【当ファイル更新時の電書協EPUB 3 制作ガイドバージョン】
+ver.1.1.3
+
+【細目】
+・外部 CSS の import
+・作品別カスタマイズ領域
+
+【更新履歴】
+2014/11/01 ver.1.1.1
+・「特殊リンク指定」を追加
+・「注釈リンクの下線と色」を変更
+
+2012/12/07 ver.1.1.0
+・ファイル更新時の電書協EPUB 3 制作ガイドバージョン表記を追加
+
+2012/08/21 ver.1.0b1
+・公開版
+---------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------
+ * 作品別カスタマイズ領域
+ * ------------------------------------------------------------- */
+
+
+/* 見出しのデフォルト書体指定
+---------------------------------------------------------------- */
+/* 横組み用 */
+.hltr h1,
+.hltr h2,
+.hltr h3,
+.hltr h4,
+.hltr h5,
+.hltr h6 {
+  font-family: serif-ja, serif;
+}
+/* 縦組み用 */
+.vrtl h1,
+.vrtl h2,
+.vrtl h3,
+.vrtl h4,
+.vrtl h5,
+.vrtl h6 {
+  font-family: serif-ja-v, serif-ja, serif;
+}
+
+
+/* リンク指定
+---------------------------------------------------------------- */
+/* 基本設定（上：横組み　下：縦組み） */
+.hltr a {
+}
+.vrtl a {
+}
+/* 未訪問リンク */
+a:link {
+}
+/* 訪問済みリンク */
+a:visited {
+}
+/* マウスオーバー時 */
+a:hover {
+}
+/* フォーカス時 */
+a:focus {
+}
+/* アクティブ時 */
+a:active {
+}
+
+
+/* 特殊リンク指定
+---------------------------------------------------------------- */
+/* 基本設定（上：横組み　下：縦組み） */
+
+/* .link-01
+-------------------- */
+.hltr a.link-01 {
+}
+.vrtl a.link-01 {
+}
+/* 未訪問リンク */
+a.link-01:link {
+}
+/* 訪問済みリンク */
+a.link-01:visited {
+}
+/* マウスオーバー時 */
+a.link-01:hover {
+}
+/* フォーカス時 */
+a.link-01:focus {
+}
+/* アクティブ時 */
+a.link-01:active {
+}
+
+/* .link-02
+-------------------- */
+.hltr a.link-02 {
+}
+.vrtl a.link-02 {
+}
+/* 未訪問リンク */
+a.link-02:link {
+}
+/* 訪問済みリンク */
+a.link-02:visited {
+}
+/* マウスオーバー時 */
+a.link-02:hover {
+}
+/* フォーカス時 */
+a.link-02:focus {
+}
+/* アクティブ時 */
+a.link-02:active {
+}
+
+/* .link-03
+-------------------- */
+.hltr a.link-03 {
+}
+.vrtl a.link-03 {
+}
+/* 未訪問リンク */
+a.link-03:link {
+}
+/* 訪問済みリンク */
+a.link-03:visited {
+}
+/* マウスオーバー時 */
+a.link-03:hover {
+}
+/* フォーカス時 */
+a.link-03:focus {
+}
+/* アクティブ時 */
+a.link-03:active {
+}
+
+
+/* 注釈リンクの下線と色 （注釈参照側）
+---------------------------------------------------------------- */
+/* 基本設定（上：横組み　下：縦組み） */
+.hltr a.noteref {
+}
+.vrtl a.noteref {
+}
+/* 未訪問リンク */
+a.noteref:link {
+}
+/* 訪問済みリンク */
+a.noteref:visited {
+}
+/* マウスオーバー時 */
+a.noteref:hover {
+}
+/* フォーカス時 */
+a.noteref:focus {
+}
+/* アクティブ時 */
+a.noteref:active {
+}
+
+
+/* 注釈リンクの下線と色 （注釈内容側）
+---------------------------------------------------------------- */
+/* 基本設定（上：横組み　下：縦組み） */
+.hltr a.note {
+}
+.vrtl a.note {
+}
+/* 未訪問リンク */
+a.note:link {
+}
+/* 訪問済みリンク */
+a.note:visited {
+}
+/* マウスオーバー時 */
+a.note:hover {
+}
+/* フォーカス時 */
+a.note:focus {
+}
+/* アクティブ時 */
+a.note:active {
+}
+
+
+/* 見出しの指定（上：横組み　下：縦組み）
+---------------------------------------------------------------- */
+/* 扉見出し */
+.hltr .tobira-midashi {
+}
+.vrtl .tobira-midashi {
+}
+/* 大見出し */
+.hltr .oo-midashi {
+}
+.vrtl .oo-midashi {
+}
+/* 中見出し */
+.hltr .naka-midashi {
+}
+.vrtl .naka-midashi {
+}
+/* 小見出し */
+.hltr .ko-midashi {
+}
+.vrtl .ko-midashi {
+}
+
+
+/* カバーページ
+----------------------------------------------------------------
+描画領域の余白をゼロに
+デフォルトで左右中央揃えに
+---------------------------------------------------------------- */
+body.p-cover {
+  margin:     0;
+  padding:    0;
+  text-align: center;
+}
+body.p-cover .main {
+}
+
+
+/* 画像のみのページ
+----------------------------------------------------------------
+描画領域の余白をゼロに
+デフォルトで左右中央揃えに
+---------------------------------------------------------------- */
+body.p-image {
+  margin:     0;
+  padding:    0;
+  text-align: center;
+}
+body.p-image .main {
+}
+
+
+/* テキスト中心のページ
+---------------------------------------------------------------- */
+body.p-text {
+}
+body.p-text .main {
+}
+
+
+/* 本扉ページ
+---------------------------------------------------------------- */
+body.p-titlepage {
+}
+body.p-titlepage .main {
+}
+
+
+/* 奥付ページ
+---------------------------------------------------------------- */
+body.p-colophon {
+}
+body.p-colophon .main {
+}
+
+
+/* 目次ページ
+---------------------------------------------------------------- */
+body.p-toc {
+}
+body.p-toc .main {
+}
+
+
+/* 電子版用の注意書きページ
+---------------------------------------------------------------- */
+body.p-caution {
+}
+body.p-caution .main {
+}
+
+
+/* 広告ページ
+---------------------------------------------------------------- */
+body.p-ad {
+}
+body.p-ad .main {
+}
+
+
+/* カスタマイズ
+---------------------------------------------------------------- */
+
+
+/* ページメディアの余白 */
+/* 
+@page { margin: 〓em; }
+ */
+
+
+/* フォントの指定 */
+/* 
+@font-face { font-family: "font-mincho_R"; src: url("../font/〓"); }
+@font-face { font-family: "font-mincho_B"; src: url("../font/〓"); }
+@font-face { font-family: "font-gothic_R"; src: url("../font/〓"); }
+@font-face { font-family: "font-gothic_B"; src: url("../font/〓"); }
+@font-face { font-family: "font-mincho_〓"; src: url("../font/〓"); font-style: normal; font-weight: normal; }
+@font-face { font-family: "font-gothic_〓"; src: url("../font/〓"); font-style: normal; font-weight: normal; }
+ */
+
+/* 
+html {
+    font-family: font-mincho_R, serif;
+}
+html .bold {
+    font-family: font-mincho_B, serif;
+}
+html rt,
+html .bold rt {
+    font-family: font-mincho_R, serif;
+}
+
+html .gfont {
+    font-family: font-gothic_R, sans-serif;
+}
+html .gfont.bold,
+html .gfont .bold,
+html .bold .gfont {
+    font-family: font-gothic_B, sans-serif;
+}
+html .gfont rt,
+html .gfont.bold rt,
+html .gfont .bold rt,
+html .bold .gfont rt {
+    font-family: font-gothic_R, sans-serif;
+}
+
+html .mfont {
+    font-family: font-mincho_R, serif;
+}
+html .mfont.bold,
+html .mfont .bold,
+html .bold .mfont {
+    font-family: font-mincho_B, sans-serif;
+}
+html .mfont rt,
+html .mfont.bold rt,
+html .mfont .bold rt,
+html .bold .mfont rt {
+    font-family: font-mincho_R, serif;
+}
+
+.bold rt {
+    font-weight: normal;
+}
+
+html.Windows rt {
+    transform: translateX(-.5em);
+}
+ */
+
+
+/* 游明朝・游ゴシックの指定 */
+/* 
+html {
+    font-family: "YuMincho Medium", "Yu Mincho Regular", serif;
+}
+html .bold {
+    font-family: "YuMincho Demibold", "Yu Mincho Demibold", serif;
+}
+html rt,
+html .bold rt {
+    font-family: "YuMincho Medium", "Yu Mincho Regular", serif;
+}
+
+html .gfont {
+    font-family: "YuGothic Medium", "Yu Gothic Regular", sans-serif;
+}
+html .gfont.bold,
+html .gfont .bold,
+html .bold .gfont {
+    font-family: "YuGothic Bold", "Yu Gothic Demibold", sans-serif;
+}
+html .gfont rt,
+html .gfont.bold rt,
+html .gfont .bold rt,
+html .bold .gfont rt {
+    font-family: "YuGothic Medium", "Yu Gothic Regular", sans-serif;
+}
+
+html .mfont {
+    font-family: "YuMincho Medium", "Yu Mincho Regular", serif;
+}
+html .mfont.bold,
+html .mfont .bold,
+html .bold .mfont {
+    font-family: "YuMincho Demibold", "Yu Mincho Demibold", sans-serif;
+}
+html .mfont rt,
+html .mfont.bold rt,
+html .mfont .bold rt,
+html .bold .mfont rt {
+    font-family: "YuMincho Medium", "Yu Mincho Regular", serif;
+}
+
+.bold rt {
+    font-weight: normal;
+}
+
+html.Windows rt {
+    transform: translateX(-.5em);
+}
+ */
+
+
+/* 強調 */
+strong, em, small {
+    text-decoration: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+
+/* 字間 */
+.pssp, .pssp-1em, .pssp-1em50,
+       .pssp-2em, .pssp-2em50,
+       .pssp-3em, .pssp-3em50,
+       .pssp-4em, .pssp-4em50,
+       .pssp-5em, .pssp-5em50,
+       .pssp-6em, .pssp-6em50,
+       .pssp-7em, .pssp-7em50,
+       .pssp-8em, .pssp-8em50,
+       .pssp-9em, .pssp-9em50 { display: inline-block; width: 0; height: 0; line-height: inherit; text-indent: 0; font-size: 1em; }
+
+/* .pssp       { padding-inline: 1.00em 0; padding-block: 0; } */  .vrtl .pssp       { padding: 1.00em 0 0; }  .hltr .pssp       { padding: 0 0 0 1.00em; }
+/* .pssp-1em   { padding-inline: 1.00em 0; padding-block: 0; } */  .vrtl .pssp-1em   { padding: 1.00em 0 0; }  .hltr .pssp-1em   { padding: 0 0 0 1.00em; }
+/* .pssp-1em50 { padding-inline: 1.50em 0; padding-block: 0; } */  .vrtl .pssp-1em50 { padding: 1.50em 0 0; }  .hltr .pssp-1em50 { padding: 0 0 0 1.50em; }
+/* .pssp-2em   { padding-inline: 2.00em 0; padding-block: 0; } */  .vrtl .pssp-2em   { padding: 2.00em 0 0; }  .hltr .pssp-2em   { padding: 0 0 0 2.00em; }
+/* .pssp-2em50 { padding-inline: 2.50em 0; padding-block: 0; } */  .vrtl .pssp-2em50 { padding: 2.50em 0 0; }  .hltr .pssp-2em50 { padding: 0 0 0 2.50em; }
+/* .pssp-3em   { padding-inline: 3.00em 0; padding-block: 0; } */  .vrtl .pssp-3em   { padding: 3.00em 0 0; }  .hltr .pssp-3em   { padding: 0 0 0 3.00em; }
+/* .pssp-3em50 { padding-inline: 3.50em 0; padding-block: 0; } */  .vrtl .pssp-3em50 { padding: 3.50em 0 0; }  .hltr .pssp-3em50 { padding: 0 0 0 3.50em; }
+/* .pssp-4em   { padding-inline: 4.00em 0; padding-block: 0; } */  .vrtl .pssp-4em   { padding: 4.00em 0 0; }  .hltr .pssp-4em   { padding: 0 0 0 4.00em; }
+/* .pssp-4em50 { padding-inline: 4.50em 0; padding-block: 0; } */  .vrtl .pssp-4em50 { padding: 4.50em 0 0; }  .hltr .pssp-4em50 { padding: 0 0 0 4.50em; }
+/* .pssp-5em   { padding-inline: 5.00em 0; padding-block: 0; } */  .vrtl .pssp-5em   { padding: 5.00em 0 0; }  .hltr .pssp-5em   { padding: 0 0 0 5.00em; }
+/* .pssp-5em50 { padding-inline: 5.50em 0; padding-block: 0; } */  .vrtl .pssp-5em50 { padding: 5.50em 0 0; }  .hltr .pssp-5em50 { padding: 0 0 0 5.50em; }
+/* .pssp-6em   { padding-inline: 6.00em 0; padding-block: 0; } */  .vrtl .pssp-6em   { padding: 6.00em 0 0; }  .hltr .pssp-6em   { padding: 0 0 0 6.00em; }
+/* .pssp-6em50 { padding-inline: 6.50em 0; padding-block: 0; } */  .vrtl .pssp-6em50 { padding: 6.50em 0 0; }  .hltr .pssp-6em50 { padding: 0 0 0 6.50em; }
+/* .pssp-7em   { padding-inline: 7.00em 0; padding-block: 0; } */  .vrtl .pssp-7em   { padding: 7.00em 0 0; }  .hltr .pssp-7em   { padding: 0 0 0 7.00em; }
+/* .pssp-7em50 { padding-inline: 7.50em 0; padding-block: 0; } */  .vrtl .pssp-7em50 { padding: 7.50em 0 0; }  .hltr .pssp-7em50 { padding: 0 0 0 7.50em; }
+/* .pssp-8em   { padding-inline: 8.00em 0; padding-block: 0; } */  .vrtl .pssp-8em   { padding: 8.00em 0 0; }  .hltr .pssp-8em   { padding: 0 0 0 8.00em; }
+/* .pssp-8em50 { padding-inline: 8.50em 0; padding-block: 0; } */  .vrtl .pssp-8em50 { padding: 8.50em 0 0; }  .hltr .pssp-8em50 { padding: 0 0 0 8.50em; }
+/* .pssp-9em   { padding-inline: 9.00em 0; padding-block: 0; } */  .vrtl .pssp-9em   { padding: 9.00em 0 0; }  .hltr .pssp-9em   { padding: 0 0 0 9.00em; }
+/* .pssp-9em50 { padding-inline: 9.50em 0; padding-block: 0; } */  .vrtl .pssp-9em50 { padding: 9.50em 0 0; }  .hltr .pssp-9em50 { padding: 0 0 0 9.50em; }
+
+
+/* 天揃え・中央揃え・地揃え_横組み用 */
+.hltr .top {}
+.hltr .middle {}
+.hltr .bottom {}
+/* 
+.hltr .middle { writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; -epub-writing-mode: vertical-rl; }
+ */
+
+/* 天揃え・中央揃え・地揃え_ブロック_横組み用 */
+.hltr .top-block {}
+.hltr .middle-block {}
+.hltr .bottom-block {}
+/* 
+.hltr .middle-block { writing-mode: horizontal-tb; -webkit-writing-mode: horizontal-tb; -epub-writing-mode: horizontal-tb; margin-top: auto; margin-bottom: auto; width: 100%; }
+ */
+
+
+/* 天揃え・中央揃え・地揃え_縦組み用 */
+.vrtl .top {}
+.vrtl .middle {}
+.vrtl .bottom {}
+/* 
+.vrtl .middle { writing-mode: horizontal-tb; -webkit-writing-mode: horizontal-tb; -epub-writing-mode: horizontal-tb; }
+ */
+
+/* 天揃え・中央揃え・地揃え_ブロック_縦組み用 */
+.vrtl .top-block {}
+.vrtl .middle-block {}
+.vrtl .bottom-block {}
+/* 
+.vrtl .middle-block { writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; -epub-writing-mode: vertical-rl; margin-left: auto; margin-right: auto; height: 100%; }
+ */
+
+
+/* 画像_インライン外字_警告 */
+.gaiji-alert01 { border-style: solid; border-width: 1px; border-color: #ff0066; }
+.gaiji-alert02 { border-style: solid; border-width: 1px; border-color: #00cc66; }
+.gaiji-alert03 { border-style: solid; border-width: 1px; border-color: #cc6600; }
+
+/* アンカー_警告 */
+.anchor-alert01 { background-color: #b0e0e6; }
+/* .anchor-alert01 { border-style: solid; border-width: 1px; border-color: #9932cc; } */
+
+
+/* alt_警告 */
+.alt-alert01 { color: #ff0066; }
+.alt-alert02 { color: #00cc66; }
+.alt-alert03 { color: #cc6600; }
+
+/* alt_インライン外字_警告 */
+.altgaiji-alert01 { color: #ff0066; }
+.altgaiji-alert02 { color: #00cc66; }
+.altgaiji-alert03 { color: #cc6600; }
+
+/* alt_画像_警告 */
+.altimg-alert01 { color: #ff0066; }
+.altimg-alert02 { color: #00cc66; }
+.altimg-alert03 { color: #cc6600; }
+
+
+/* ruby_警告 */
+.ruby-alert01 { color: #cc6600; }
+.ruby-alert02 { color: #008080; }
+.ruby-alert03 { color: #ff0066; }
+
+.rt-alert01 { color: #cc6600; }
+.rt-alert02 { color: #008080; }
+.rt-alert03 { color: #ff0066; }
+
+
+/* 音声_再生中_文字 */
+.-epub-media-overlay-active { background-color: yellow; color: black !important; }
+
+/* 音声_再生中_文字回り */
+html.-epub-media-overlay-playing * { color: gray; }
+
+
+/* 罫_角丸_上下左右 */
+.k-radius10px { border-radius: 10px; -webkit-border-radius: 10px; }
+.k-radius20px { border-radius: 20px; -webkit-border-radius: 20px; }
+.k-radius30px { border-radius: 30px; -webkit-border-radius: 30px; }
+.k-radius40px { border-radius: 40px; -webkit-border-radius: 40px; }
+.k-radius50px { border-radius: 50px; -webkit-border-radius: 50px; }
+
+
+/* フォントカラー */
+/* web216 */
+.color-000000 { color: #000000; }
+.color-ffffcc { color: #ffffcc; }
+.color-99ff99 { color: #99ff99; }
+.color-66ffff { color: #66ffff; }
+.color-3333ff { color: #3333ff; }
+.color-ff00ff { color: #ff00ff; }
+.color-333333 { color: #333333; }
+.color-ffff99 { color: #ffff99; }
+.color-66ff66 { color: #66ff66; }
+.color-33ffff { color: #33ffff; }
+.color-0000ff { color: #0000ff; }
+.color-ff00cc { color: #ff00cc; }
+.color-666666 { color: #666666; }
+.color-ffff66 { color: #ffff66; }
+.color-33ff33 { color: #33ff33; }
+.color-00ffff { color: #00ffff; }
+.color-3300ff { color: #3300ff; }
+.color-cc0099 { color: #cc0099; }
+.color-999999 { color: #999999; }
+.color-ffff33 { color: #ffff33; }
+.color-00ff00 { color: #00ff00; }
+.color-00ccff { color: #00ccff; }
+.color-3300cc { color: #3300cc; }
+.color-ff33cc { color: #ff33cc; }
+.color-cccccc { color: #cccccc; }
+.color-ffff00 { color: #ffff00; }
+.color-00ff33 { color: #00ff33; }
+.color-0099cc { color: #0099cc; }
+.color-6633ff { color: #6633ff; }
+.color-990066 { color: #990066; }
+.color-ffffff { color: #ffffff; }
+.color-ccff00 { color: #ccff00; }
+.color-00cc33 { color: #00cc33; }
+.color-33ccff { color: #33ccff; }
+.color-330099 { color: #330099; }
+.color-cc3399 { color: #cc3399; }
+.color-ff3300 { color: #ff3300; }
+.color-99cc00 { color: #99cc00; }
+.color-33ff66 { color: #33ff66; }
+.color-006699 { color: #006699; }
+.color-6633cc { color: #6633cc; }
+.color-ff66cc { color: #ff66cc; }
+.color-cc3300 { color: #cc3300; }
+.color-ccff33 { color: #ccff33; }
+.color-009933 { color: #009933; }
+.color-3399cc { color: #3399cc; }
+.color-9966ff { color: #9966ff; }
+.color-ff0099 { color: #ff0099; }
+.color-ff6633 { color: #ff6633; }
+.color-669900 { color: #669900; }
+.color-33cc66 { color: #33cc66; }
+.color-66ccff { color: #66ccff; }
+.color-6600ff { color: #6600ff; }
+.color-660033 { color: #660033; }
+.color-993300 { color: #993300; }
+.color-99cc33 { color: #99cc33; }
+.color-66ff99 { color: #66ff99; }
+.color-0099ff { color: #0099ff; }
+.color-330066 { color: #330066; }
+.color-993366 { color: #993366; }
+.color-cc6633 { color: #cc6633; }
+.color-ccff66 { color: #ccff66; }
+.color-00ff66 { color: #00ff66; }
+.color-003366 { color: #003366; }
+.color-663399 { color: #663399; }
+.color-cc6699 { color: #cc6699; }
+.color-ff9966 { color: #ff9966; }
+.color-99ff00 { color: #99ff00; }
+.color-006633 { color: #006633; }
+.color-336699 { color: #336699; }
+.color-9966cc { color: #9966cc; }
+.color-cc0066 { color: #cc0066; }
+.color-ff6600 { color: #ff6600; }
+.color-336600 { color: #336600; }
+.color-339966 { color: #339966; }
+.color-6699cc { color: #6699cc; }
+.color-6600cc { color: #6600cc; }
+.color-ff99cc { color: #ff99cc; }
+.color-663300 { color: #663300; }
+.color-669933 { color: #669933; }
+.color-66cc99 { color: #66cc99; }
+.color-0066cc { color: #0066cc; }
+.color-cc99ff { color: #cc99ff; }
+.color-ff3399 { color: #ff3399; }
+.color-996633 { color: #996633; }
+.color-99cc66 { color: #99cc66; }
+.color-00cc66 { color: #00cc66; }
+.color-99ccff { color: #99ccff; }
+.color-9933ff { color: #9933ff; }
+.color-ff0066 { color: #ff0066; }
+.color-cc9966 { color: #cc9966; }
+.color-66cc00 { color: #66cc00; }
+.color-99ffcc { color: #99ffcc; }
+.color-3399ff { color: #3399ff; }
+.color-9900ff { color: #9900ff; }
+.color-990033 { color: #990033; }
+.color-cc6600 { color: #cc6600; }
+.color-ccff99 { color: #ccff99; }
+.color-33ff99 { color: #33ff99; }
+.color-0066ff { color: #0066ff; }
+.color-660099 { color: #660099; }
+.color-cc3366 { color: #cc3366; }
+.color-ffcc99 { color: #ffcc99; }
+.color-99ff33 { color: #99ff33; }
+.color-00ff99 { color: #00ff99; }
+.color-003399 { color: #003399; }
+.color-9933cc { color: #9933cc; }
+.color-ff6699 { color: #ff6699; }
+.color-ff9933 { color: #ff9933; }
+.color-66ff00 { color: #66ff00; }
+.color-009966 { color: #009966; }
+.color-3366cc { color: #3366cc; }
+.color-cc66ff { color: #cc66ff; }
+.color-cc0033 { color: #cc0033; }
+.color-ff9900 { color: #ff9900; }
+.color-339900 { color: #339900; }
+.color-33cc99 { color: #33cc99; }
+.color-6699ff { color: #6699ff; }
+.color-9900cc { color: #9900cc; }
+.color-ff3366 { color: #ff3366; }
+.color-996600 { color: #996600; }
+.color-66cc33 { color: #66cc33; }
+.color-66ffcc { color: #66ffcc; }
+.color-0033cc { color: #0033cc; }
+.color-cc33ff { color: #cc33ff; }
+.color-ff0033 { color: #ff0033; }
+.color-cc9933 { color: #cc9933; }
+.color-99ff66 { color: #99ff66; }
+.color-00cc99 { color: #00cc99; }
+.color-3366ff { color: #3366ff; }
+.color-cc00ff { color: #cc00ff; }
+.color-330000 { color: #330000; }
+.color-ffcc66 { color: #ffcc66; }
+.color-33cc00 { color: #33cc00; }
+.color-33ffcc { color: #33ffcc; }
+.color-0033ff { color: #0033ff; }
+.color-330033 { color: #330033; }
+.color-663333 { color: #663333; }
+.color-cc9900 { color: #cc9900; }
+.color-66ff33 { color: #66ff33; }
+.color-00ffcc { color: #00ffcc; }
+.color-000033 { color: #000033; }
+.color-663366 { color: #663366; }
+.color-660000 { color: #660000; }
+.color-ffcc33 { color: #ffcc33; }
+.color-33ff00 { color: #33ff00; }
+.color-003333 { color: #003333; }
+.color-333366 { color: #333366; }
+.color-660066 { color: #660066; }
+.color-996666 { color: #996666; }
+.color-ffcc00 { color: #ffcc00; }
+.color-003300 { color: #003300; }
+.color-336666 { color: #336666; }
+.color-000066 { color: #000066; }
+.color-996699 { color: #996699; }
+.color-993333 { color: #993333; }
+.color-333300 { color: #333300; }
+.color-336633 { color: #336633; }
+.color-006666 { color: #006666; }
+.color-666699 { color: #666699; }
+.color-993399 { color: #993399; }
+.color-990000 { color: #990000; }
+.color-666633 { color: #666633; }
+.color-006600 { color: #006600; }
+.color-669999 { color: #669999; }
+.color-333399 { color: #333399; }
+.color-990099 { color: #990099; }
+.color-cc9999 { color: #cc9999; }
+.color-666600 { color: #666600; }
+.color-669966 { color: #669966; }
+.color-339999 { color: #339999; }
+.color-000099 { color: #000099; }
+.color-cc99cc { color: #cc99cc; }
+.color-cc6666 { color: #cc6666; }
+.color-999966 { color: #999966; }
+.color-339933 { color: #339933; }
+.color-009999 { color: #009999; }
+.color-9999cc { color: #9999cc; }
+.color-cc66cc { color: #cc66cc; }
+.color-cc3333 { color: #cc3333; }
+.color-999933 { color: #999933; }
+.color-009900 { color: #009900; }
+.color-99cccc { color: #99cccc; }
+.color-6666cc { color: #6666cc; }
+.color-cc33cc { color: #cc33cc; }
+.color-cc0000 { color: #cc0000; }
+.color-999900 { color: #999900; }
+.color-99cc99 { color: #99cc99; }
+.color-66cccc { color: #66cccc; }
+.color-3333cc { color: #3333cc; }
+.color-cc00cc { color: #cc00cc; }
+.color-ffcccc { color: #ffcccc; }
+.color-cccc99 { color: #cccc99; }
+.color-66cc66 { color: #66cc66; }
+.color-33cccc { color: #33cccc; }
+.color-0000cc { color: #0000cc; }
+.color-ffccff { color: #ffccff; }
+.color-ff9999 { color: #ff9999; }
+.color-cccc66 { color: #cccc66; }
+.color-33cc33 { color: #33cc33; }
+.color-00cccc { color: #00cccc; }
+.color-ccccff { color: #ccccff; }
+.color-ff99ff { color: #ff99ff; }
+.color-ff6666 { color: #ff6666; }
+.color-cccc33 { color: #cccc33; }
+.color-00cc00 { color: #00cc00; }
+.color-ccffff { color: #ccffff; }
+.color-9999ff { color: #9999ff; }
+.color-ff66ff { color: #ff66ff; }
+.color-ff3333 { color: #ff3333; }
+.color-cccc00 { color: #cccc00; }
+.color-ccffcc { color: #ccffcc; }
+.color-99ffff { color: #99ffff; }
+.color-6666ff { color: #6666ff; }
+.color-ff33ff { color: #ff33ff; }
+.color-ff0000 { color: #ff0000; }
+/* 原色code */
+.color-f0f8ff { color: #f0f8ff; }
+.color-008b8b { color: #008b8b; }
+.color-ffffe0 { color: #ffffe0; }
+.color-ff7f50 { color: #ff7f50; }
+.color-696969 { color: #696969; }
+.color-e6e6fa { color: #e6e6fa; }
+.color-008080 { color: #008080; }
+.color-fafad2 { color: #fafad2; }
+.color-ff6347 { color: #ff6347; }
+.color-808080 { color: #808080; }
+.color-b0c4de { color: #b0c4de; }
+.color-2f4f4f { color: #2f4f4f; }
+.color-fffacd { color: #fffacd; }
+.color-ff4500 { color: #ff4500; }
+.color-a9a9a9 { color: #a9a9a9; }
+.color-778899 { color: #778899; }
+.color-006400 { color: #006400; }
+.color-f5deb3 { color: #f5deb3; }
+.color-c0c0c0 { color: #c0c0c0; }
+.color-708090 { color: #708090; }
+.color-008000 { color: #008000; }
+.color-deb887 { color: #deb887; }
+.color-dc143c { color: #dc143c; }
+.color-d3d3d3 { color: #d3d3d3; }
+.color-4682b4 { color: #4682b4; }
+.color-228b22 { color: #228b22; }
+.color-d2b48c { color: #d2b48c; }
+.color-c71585 { color: #c71585; }
+.color-dcdcdc { color: #dcdcdc; }
+.color-4169e1 { color: #4169e1; }
+.color-2e8b57 { color: #2e8b57; }
+.color-f0e68c { color: #f0e68c; }
+.color-ff1493 { color: #ff1493; }
+.color-f5f5f5 { color: #f5f5f5; }
+.color-191970 { color: #191970; }
+.color-3cb371 { color: #3cb371; }
+.color-ff69b4 { color: #ff69b4; }
+.color-000080 { color: #000080; }
+.color-66cdaa { color: #66cdaa; }
+.color-ffd700 { color: #ffd700; }
+.color-db7093 { color: #db7093; }
+.color-fffafa { color: #fffafa; }
+.color-00008b { color: #00008b; }
+.color-8fbc8f { color: #8fbc8f; }
+.color-ffa500 { color: #ffa500; }
+.color-ffc0cb { color: #ffc0cb; }
+.color-f8f8ff { color: #f8f8ff; }
+.color-0000cd { color: #0000cd; }
+.color-7fffd4 { color: #7fffd4; }
+.color-f4a460 { color: #f4a460; }
+.color-ffb6c1 { color: #ffb6c1; }
+.color-fffaf0 { color: #fffaf0; }
+.color-98fb98 { color: #98fb98; }
+.color-ff8c00 { color: #ff8c00; }
+.color-d8bfd8 { color: #d8bfd8; }
+.color-faf0e6 { color: #faf0e6; }
+.color-1e90ff { color: #1e90ff; }
+.color-90ee90 { color: #90ee90; }
+.color-daa520 { color: #daa520; }
+.color-faebd7 { color: #faebd7; }
+.color-6495ed { color: #6495ed; }
+.color-00ff7f { color: #00ff7f; }
+.color-cd853f { color: #cd853f; }
+.color-ffefd5 { color: #ffefd5; }
+.color-00bfff { color: #00bfff; }
+.color-00fa9a { color: #00fa9a; }
+.color-b8860b { color: #b8860b; }
+.color-ee82ee { color: #ee82ee; }
+.color-ffebcd { color: #ffebcd; }
+.color-87cefa { color: #87cefa; }
+.color-7cfc00 { color: #7cfc00; }
+.color-d2691e { color: #d2691e; }
+.color-dda0dd { color: #dda0dd; }
+.color-ffe4c4 { color: #ffe4c4; }
+.color-87ceeb { color: #87ceeb; }
+.color-7fff00 { color: #7fff00; }
+.color-a0522d { color: #a0522d; }
+.color-da70d6 { color: #da70d6; }
+.color-ffe4b5 { color: #ffe4b5; }
+.color-add8e6 { color: #add8e6; }
+.color-adff2f { color: #adff2f; }
+.color-8b4513 { color: #8b4513; }
+.color-ba55d3 { color: #ba55d3; }
+.color-ffdead { color: #ffdead; }
+.color-b0e0e6 { color: #b0e0e6; }
+.color-800000 { color: #800000; }
+.color-9932cc { color: #9932cc; }
+.color-ffdab9 { color: #ffdab9; }
+.color-afeeee { color: #afeeee; }
+.color-32cd32 { color: #32cd32; }
+.color-8b0000 { color: #8b0000; }
+.color-9400d3 { color: #9400d3; }
+.color-ffe4e1 { color: #ffe4e1; }
+.color-e0ffff { color: #e0ffff; }
+.color-9acd32 { color: #9acd32; }
+.color-a52a2a { color: #a52a2a; }
+.color-8b008b { color: #8b008b; }
+.color-fff0f5 { color: #fff0f5; }
+.color-556b2f { color: #556b2f; }
+.color-b22222 { color: #b22222; }
+.color-800080 { color: #800080; }
+.color-fff5ee { color: #fff5ee; }
+.color-6b8e23 { color: #6b8e23; }
+.color-cd5c5c { color: #cd5c5c; }
+.color-4b0082 { color: #4b0082; }
+.color-fdf5e6 { color: #fdf5e6; }
+.color-40e0d0 { color: #40e0d0; }
+.color-808000 { color: #808000; }
+.color-bc8f8f { color: #bc8f8f; }
+.color-483d8b { color: #483d8b; }
+.color-fffff0 { color: #fffff0; }
+.color-48d1cc { color: #48d1cc; }
+.color-bdb76b { color: #bdb76b; }
+.color-e9967a { color: #e9967a; }
+.color-8a2be2 { color: #8a2be2; }
+.color-f0fff0 { color: #f0fff0; }
+.color-00ced1 { color: #00ced1; }
+.color-eee8aa { color: #eee8aa; }
+.color-f08080 { color: #f08080; }
+.color-9370db { color: #9370db; }
+.color-f5fffa { color: #f5fffa; }
+.color-20b2aa { color: #20b2aa; }
+.color-fff8dc { color: #fff8dc; }
+.color-fa8072 { color: #fa8072; }
+.color-6a5acd { color: #6a5acd; }
+.color-f0ffff { color: #f0ffff; }
+.color-5f9ea0 { color: #5f9ea0; }
+.color-f5f5dc { color: #f5f5dc; }
+.color-ffa07a { color: #ffa07a; }
+.color-7b68ee { color: #7b68ee; }
+/* 原色name */
+.color-aliceblue { color: aliceblue; }
+.color-darkcyan { color: darkcyan; }
+.color-lightyellow { color: lightyellow; }
+.color-coral { color: coral; }
+.color-lavender { color: lavender; }
+.color-teal { color: teal; }
+.color-lightgoldenrodyellow { color: lightgoldenrodyellow; }
+.color-tomato { color: tomato; }
+.color-lightsteelblue { color: lightsteelblue; }
+.color-darkslategray { color: darkslategray; }
+.color-lemonchiffon { color: lemonchiffon; }
+.color-lightslategray { color: lightslategray; }
+.color-darkgreen { color: darkgreen; }
+.color-wheat { color: wheat; }
+.color-slategray { color: slategray; }
+.color-green { color: green; }
+.color-burlywood { color: burlywood; }
+.color-crimson { color: crimson; }
+.color-lightgrey { color: lightgrey; }
+.color-steelblue { color: steelblue; }
+.color-forestgreen { color: forestgreen; }
+.color-tan { color: tan; }
+.color-mediumvioletred { color: mediumvioletred; }
+.color-royalblue { color: royalblue; }
+.color-seagreen { color: seagreen; }
+.color-khaki { color: khaki; }
+.color-deeppink { color: deeppink; }
+.color-whitesmoke { color: whitesmoke; }
+.color-midnightblue { color: midnightblue; }
+.color-mediumseagreen { color: mediumseagreen; }
+.color-yellow { color: yellow; }
+.color-hotpink { color: hotpink; }
+.color-navy { color: navy; }
+.color-mediumaquamarine { color: mediumaquamarine; }
+.color-gold { color: gold; }
+.color-palevioletred { color: palevioletred; }
+.color-snow { color: snow; }
+.color-darkblue { color: darkblue; }
+.color-darkseagreen { color: darkseagreen; }
+.color-orange { color: orange; }
+.color-pink { color: pink; }
+.color-ghostwhite { color: ghostwhite; }
+.color-mediumblue { color: mediumblue; }
+.color-aquamarine { color: aquamarine; }
+.color-sandybrown { color: sandybrown; }
+.color-lightpink { color: lightpink; }
+.color-floralwhite { color: floralwhite; }
+.color-palegreen { color: palegreen; }
+.color-darkorange { color: darkorange; }
+.color-thistle { color: thistle; }
+.color-linen { color: linen; }
+.color-dodgerblue { color: dodgerblue; }
+.color-lightgreen { color: lightgreen; }
+.color-goldenrod { color: goldenrod; }
+.color-antiquewhite { color: antiquewhite; }
+.color-cornflowerblue { color: cornflowerblue; }
+.color-springgreen { color: springgreen; }
+.color-peru { color: peru; }
+.color-fuchsia { color: fuchsia; }
+.color-papayawhip { color: papayawhip; }
+.color-deepskyblue { color: deepskyblue; }
+.color-mediumspringgreen { color: mediumspringgreen; }
+.color-darkgoldenrod { color: darkgoldenrod; }
+.color-violet { color: violet; }
+.color-blanchedalmond { color: blanchedalmond; }
+.color-lightskyblue { color: lightskyblue; }
+.color-lawngreen { color: lawngreen; }
+.color-chocolate { color: chocolate; }
+.color-plum { color: plum; }
+.color-bisque { color: bisque; }
+.color-skyblue { color: skyblue; }
+.color-chartreuse { color: chartreuse; }
+.color-sienna { color: sienna; }
+.color-orchid { color: orchid; }
+.color-moccasin { color: moccasin; }
+.color-lightblue { color: lightblue; }
+.color-greenyellow { color: greenyellow; }
+.color-saddlebrown { color: saddlebrown; }
+.color-mediumorchid { color: mediumorchid; }
+.color-navajowhite { color: navajowhite; }
+.color-powderblue { color: powderblue; }
+.color-lime { color: lime; }
+.color-maroon { color: maroon; }
+.color-darkorchid { color: darkorchid; }
+.color-peachpuff { color: peachpuff; }
+.color-paleturquoise { color: paleturquoise; }
+.color-limegreen { color: limegreen; }
+.color-darkred { color: darkred; }
+.color-darkviolet { color: darkviolet; }
+.color-mistyrose { color: mistyrose; }
+.color-lightcyan { color: lightcyan; }
+.color-yellowgreen { color: yellowgreen; }
+.color-brown { color: brown; }
+.color-darkmagenta { color: darkmagenta; }
+.color-lavenderblush { color: lavenderblush; }
+.color-darkolivegreen { color: darkolivegreen; }
+.color-firebrick { color: firebrick; }
+.color-purple { color: purple; }
+.color-seashell { color: seashell; }
+.color-aqua { color: aqua; }
+.color-olivedrab { color: olivedrab; }
+.color-indianred { color: indianred; }
+.color-indigo { color: indigo; }
+.color-oldlace { color: oldlace; }
+.color-turquoise { color: turquoise; }
+.color-olive { color: olive; }
+.color-rosybrown { color: rosybrown; }
+.color-darkslateblue { color: darkslateblue; }
+.color-ivory { color: ivory; }
+.color-mediumturquoise { color: mediumturquoise; }
+.color-darkkhaki { color: darkkhaki; }
+.color-darksalmon { color: darksalmon; }
+.color-blueviolet { color: blueviolet; }
+.color-honeydew { color: honeydew; }
+.color-darkturquoise { color: darkturquoise; }
+.color-palegoldenrod { color: palegoldenrod; }
+.color-lightcoral { color: lightcoral; }
+.color-mediumpurple { color: mediumpurple; }
+.color-mintcream { color: mintcream; }
+.color-lightseagreen { color: lightseagreen; }
+.color-cornsilk { color: cornsilk; }
+.color-salmon { color: salmon; }
+.color-slateblue { color: slateblue; }
+.color-azure { color: azure; }
+.color-cadetblue { color: cadetblue; }
+.color-beige { color: beige; }
+.color-lightsalmon { color: lightsalmon; }
+.color-mediumslateblue { color: mediumslateblue; }
+
+
+/* 背景カラー */
+ /* web216 */
+.bg-000000 { background-color: #000000; }
+.bg-ffffcc { background-color: #ffffcc; }
+.bg-99ff99 { background-color: #99ff99; }
+.bg-66ffff { background-color: #66ffff; }
+.bg-3333ff { background-color: #3333ff; }
+.bg-ff00ff { background-color: #ff00ff; }
+.bg-333333 { background-color: #333333; }
+.bg-ffff99 { background-color: #ffff99; }
+.bg-66ff66 { background-color: #66ff66; }
+.bg-33ffff { background-color: #33ffff; }
+.bg-0000ff { background-color: #0000ff; }
+.bg-ff00cc { background-color: #ff00cc; }
+.bg-666666 { background-color: #666666; }
+.bg-ffff66 { background-color: #ffff66; }
+.bg-33ff33 { background-color: #33ff33; }
+.bg-00ffff { background-color: #00ffff; }
+.bg-3300ff { background-color: #3300ff; }
+.bg-cc0099 { background-color: #cc0099; }
+.bg-999999 { background-color: #999999; }
+.bg-ffff33 { background-color: #ffff33; }
+.bg-00ff00 { background-color: #00ff00; }
+.bg-00ccff { background-color: #00ccff; }
+.bg-3300cc { background-color: #3300cc; }
+.bg-ff33cc { background-color: #ff33cc; }
+.bg-cccccc { background-color: #cccccc; }
+.bg-ffff00 { background-color: #ffff00; }
+.bg-00ff33 { background-color: #00ff33; }
+.bg-0099cc { background-color: #0099cc; }
+.bg-6633ff { background-color: #6633ff; }
+.bg-990066 { background-color: #990066; }
+.bg-ffffff { background-color: #ffffff; }
+.bg-ccff00 { background-color: #ccff00; }
+.bg-00cc33 { background-color: #00cc33; }
+.bg-33ccff { background-color: #33ccff; }
+.bg-330099 { background-color: #330099; }
+.bg-cc3399 { background-color: #cc3399; }
+.bg-ff3300 { background-color: #ff3300; }
+.bg-99cc00 { background-color: #99cc00; }
+.bg-33ff66 { background-color: #33ff66; }
+.bg-006699 { background-color: #006699; }
+.bg-6633cc { background-color: #6633cc; }
+.bg-ff66cc { background-color: #ff66cc; }
+.bg-cc3300 { background-color: #cc3300; }
+.bg-ccff33 { background-color: #ccff33; }
+.bg-009933 { background-color: #009933; }
+.bg-3399cc { background-color: #3399cc; }
+.bg-9966ff { background-color: #9966ff; }
+.bg-ff0099 { background-color: #ff0099; }
+.bg-ff6633 { background-color: #ff6633; }
+.bg-669900 { background-color: #669900; }
+.bg-33cc66 { background-color: #33cc66; }
+.bg-66ccff { background-color: #66ccff; }
+.bg-6600ff { background-color: #6600ff; }
+.bg-660033 { background-color: #660033; }
+.bg-993300 { background-color: #993300; }
+.bg-99cc33 { background-color: #99cc33; }
+.bg-66ff99 { background-color: #66ff99; }
+.bg-0099ff { background-color: #0099ff; }
+.bg-330066 { background-color: #330066; }
+.bg-993366 { background-color: #993366; }
+.bg-cc6633 { background-color: #cc6633; }
+.bg-ccff66 { background-color: #ccff66; }
+.bg-00ff66 { background-color: #00ff66; }
+.bg-003366 { background-color: #003366; }
+.bg-663399 { background-color: #663399; }
+.bg-cc6699 { background-color: #cc6699; }
+.bg-ff9966 { background-color: #ff9966; }
+.bg-99ff00 { background-color: #99ff00; }
+.bg-006633 { background-color: #006633; }
+.bg-336699 { background-color: #336699; }
+.bg-9966cc { background-color: #9966cc; }
+.bg-cc0066 { background-color: #cc0066; }
+.bg-ff6600 { background-color: #ff6600; }
+.bg-336600 { background-color: #336600; }
+.bg-339966 { background-color: #339966; }
+.bg-6699cc { background-color: #6699cc; }
+.bg-6600cc { background-color: #6600cc; }
+.bg-ff99cc { background-color: #ff99cc; }
+.bg-663300 { background-color: #663300; }
+.bg-669933 { background-color: #669933; }
+.bg-66cc99 { background-color: #66cc99; }
+.bg-0066cc { background-color: #0066cc; }
+.bg-cc99ff { background-color: #cc99ff; }
+.bg-ff3399 { background-color: #ff3399; }
+.bg-996633 { background-color: #996633; }
+.bg-99cc66 { background-color: #99cc66; }
+.bg-00cc66 { background-color: #00cc66; }
+.bg-99ccff { background-color: #99ccff; }
+.bg-9933ff { background-color: #9933ff; }
+.bg-ff0066 { background-color: #ff0066; }
+.bg-cc9966 { background-color: #cc9966; }
+.bg-66cc00 { background-color: #66cc00; }
+.bg-99ffcc { background-color: #99ffcc; }
+.bg-3399ff { background-color: #3399ff; }
+.bg-9900ff { background-color: #9900ff; }
+.bg-990033 { background-color: #990033; }
+.bg-cc6600 { background-color: #cc6600; }
+.bg-ccff99 { background-color: #ccff99; }
+.bg-33ff99 { background-color: #33ff99; }
+.bg-0066ff { background-color: #0066ff; }
+.bg-660099 { background-color: #660099; }
+.bg-cc3366 { background-color: #cc3366; }
+.bg-ffcc99 { background-color: #ffcc99; }
+.bg-99ff33 { background-color: #99ff33; }
+.bg-00ff99 { background-color: #00ff99; }
+.bg-003399 { background-color: #003399; }
+.bg-9933cc { background-color: #9933cc; }
+.bg-ff6699 { background-color: #ff6699; }
+.bg-ff9933 { background-color: #ff9933; }
+.bg-66ff00 { background-color: #66ff00; }
+.bg-009966 { background-color: #009966; }
+.bg-3366cc { background-color: #3366cc; }
+.bg-cc66ff { background-color: #cc66ff; }
+.bg-cc0033 { background-color: #cc0033; }
+.bg-ff9900 { background-color: #ff9900; }
+.bg-339900 { background-color: #339900; }
+.bg-33cc99 { background-color: #33cc99; }
+.bg-6699ff { background-color: #6699ff; }
+.bg-9900cc { background-color: #9900cc; }
+.bg-ff3366 { background-color: #ff3366; }
+.bg-996600 { background-color: #996600; }
+.bg-66cc33 { background-color: #66cc33; }
+.bg-66ffcc { background-color: #66ffcc; }
+.bg-0033cc { background-color: #0033cc; }
+.bg-cc33ff { background-color: #cc33ff; }
+.bg-ff0033 { background-color: #ff0033; }
+.bg-cc9933 { background-color: #cc9933; }
+.bg-99ff66 { background-color: #99ff66; }
+.bg-00cc99 { background-color: #00cc99; }
+.bg-3366ff { background-color: #3366ff; }
+.bg-cc00ff { background-color: #cc00ff; }
+.bg-330000 { background-color: #330000; }
+.bg-ffcc66 { background-color: #ffcc66; }
+.bg-33cc00 { background-color: #33cc00; }
+.bg-33ffcc { background-color: #33ffcc; }
+.bg-0033ff { background-color: #0033ff; }
+.bg-330033 { background-color: #330033; }
+.bg-663333 { background-color: #663333; }
+.bg-cc9900 { background-color: #cc9900; }
+.bg-66ff33 { background-color: #66ff33; }
+.bg-00ffcc { background-color: #00ffcc; }
+.bg-000033 { background-color: #000033; }
+.bg-663366 { background-color: #663366; }
+.bg-660000 { background-color: #660000; }
+.bg-ffcc33 { background-color: #ffcc33; }
+.bg-33ff00 { background-color: #33ff00; }
+.bg-003333 { background-color: #003333; }
+.bg-333366 { background-color: #333366; }
+.bg-660066 { background-color: #660066; }
+.bg-996666 { background-color: #996666; }
+.bg-ffcc00 { background-color: #ffcc00; }
+.bg-003300 { background-color: #003300; }
+.bg-336666 { background-color: #336666; }
+.bg-000066 { background-color: #000066; }
+.bg-996699 { background-color: #996699; }
+.bg-993333 { background-color: #993333; }
+.bg-333300 { background-color: #333300; }
+.bg-336633 { background-color: #336633; }
+.bg-006666 { background-color: #006666; }
+.bg-666699 { background-color: #666699; }
+.bg-993399 { background-color: #993399; }
+.bg-990000 { background-color: #990000; }
+.bg-666633 { background-color: #666633; }
+.bg-006600 { background-color: #006600; }
+.bg-669999 { background-color: #669999; }
+.bg-333399 { background-color: #333399; }
+.bg-990099 { background-color: #990099; }
+.bg-cc9999 { background-color: #cc9999; }
+.bg-666600 { background-color: #666600; }
+.bg-669966 { background-color: #669966; }
+.bg-339999 { background-color: #339999; }
+.bg-000099 { background-color: #000099; }
+.bg-cc99cc { background-color: #cc99cc; }
+.bg-cc6666 { background-color: #cc6666; }
+.bg-999966 { background-color: #999966; }
+.bg-339933 { background-color: #339933; }
+.bg-009999 { background-color: #009999; }
+.bg-9999cc { background-color: #9999cc; }
+.bg-cc66cc { background-color: #cc66cc; }
+.bg-cc3333 { background-color: #cc3333; }
+.bg-999933 { background-color: #999933; }
+.bg-009900 { background-color: #009900; }
+.bg-99cccc { background-color: #99cccc; }
+.bg-6666cc { background-color: #6666cc; }
+.bg-cc33cc { background-color: #cc33cc; }
+.bg-cc0000 { background-color: #cc0000; }
+.bg-999900 { background-color: #999900; }
+.bg-99cc99 { background-color: #99cc99; }
+.bg-66cccc { background-color: #66cccc; }
+.bg-3333cc { background-color: #3333cc; }
+.bg-cc00cc { background-color: #cc00cc; }
+.bg-ffcccc { background-color: #ffcccc; }
+.bg-cccc99 { background-color: #cccc99; }
+.bg-66cc66 { background-color: #66cc66; }
+.bg-33cccc { background-color: #33cccc; }
+.bg-0000cc { background-color: #0000cc; }
+.bg-ffccff { background-color: #ffccff; }
+.bg-ff9999 { background-color: #ff9999; }
+.bg-cccc66 { background-color: #cccc66; }
+.bg-33cc33 { background-color: #33cc33; }
+.bg-00cccc { background-color: #00cccc; }
+.bg-ccccff { background-color: #ccccff; }
+.bg-ff99ff { background-color: #ff99ff; }
+.bg-ff6666 { background-color: #ff6666; }
+.bg-cccc33 { background-color: #cccc33; }
+.bg-00cc00 { background-color: #00cc00; }
+.bg-ccffff { background-color: #ccffff; }
+.bg-9999ff { background-color: #9999ff; }
+.bg-ff66ff { background-color: #ff66ff; }
+.bg-ff3333 { background-color: #ff3333; }
+.bg-cccc00 { background-color: #cccc00; }
+.bg-ccffcc { background-color: #ccffcc; }
+.bg-99ffff { background-color: #99ffff; }
+.bg-6666ff { background-color: #6666ff; }
+.bg-ff33ff { background-color: #ff33ff; }
+.bg-ff0000 { background-color: #ff0000; }
+/* 原色code */
+.bg-f0f8ff { background-color: #f0f8ff; }
+.bg-008b8b { background-color: #008b8b; }
+.bg-ffffe0 { background-color: #ffffe0; }
+.bg-ff7f50 { background-color: #ff7f50; }
+.bg-696969 { background-color: #696969; }
+.bg-e6e6fa { background-color: #e6e6fa; }
+.bg-008080 { background-color: #008080; }
+.bg-fafad2 { background-color: #fafad2; }
+.bg-ff6347 { background-color: #ff6347; }
+.bg-808080 { background-color: #808080; }
+.bg-b0c4de { background-color: #b0c4de; }
+.bg-2f4f4f { background-color: #2f4f4f; }
+.bg-fffacd { background-color: #fffacd; }
+.bg-ff4500 { background-color: #ff4500; }
+.bg-a9a9a9 { background-color: #a9a9a9; }
+.bg-778899 { background-color: #778899; }
+.bg-006400 { background-color: #006400; }
+.bg-f5deb3 { background-color: #f5deb3; }
+.bg-c0c0c0 { background-color: #c0c0c0; }
+.bg-708090 { background-color: #708090; }
+.bg-008000 { background-color: #008000; }
+.bg-deb887 { background-color: #deb887; }
+.bg-dc143c { background-color: #dc143c; }
+.bg-d3d3d3 { background-color: #d3d3d3; }
+.bg-4682b4 { background-color: #4682b4; }
+.bg-228b22 { background-color: #228b22; }
+.bg-d2b48c { background-color: #d2b48c; }
+.bg-c71585 { background-color: #c71585; }
+.bg-dcdcdc { background-color: #dcdcdc; }
+.bg-4169e1 { background-color: #4169e1; }
+.bg-2e8b57 { background-color: #2e8b57; }
+.bg-f0e68c { background-color: #f0e68c; }
+.bg-ff1493 { background-color: #ff1493; }
+.bg-f5f5f5 { background-color: #f5f5f5; }
+.bg-191970 { background-color: #191970; }
+.bg-3cb371 { background-color: #3cb371; }
+.bg-ff69b4 { background-color: #ff69b4; }
+.bg-000080 { background-color: #000080; }
+.bg-66cdaa { background-color: #66cdaa; }
+.bg-ffd700 { background-color: #ffd700; }
+.bg-db7093 { background-color: #db7093; }
+.bg-fffafa { background-color: #fffafa; }
+.bg-00008b { background-color: #00008b; }
+.bg-8fbc8f { background-color: #8fbc8f; }
+.bg-ffa500 { background-color: #ffa500; }
+.bg-ffc0cb { background-color: #ffc0cb; }
+.bg-f8f8ff { background-color: #f8f8ff; }
+.bg-0000cd { background-color: #0000cd; }
+.bg-7fffd4 { background-color: #7fffd4; }
+.bg-f4a460 { background-color: #f4a460; }
+.bg-ffb6c1 { background-color: #ffb6c1; }
+.bg-fffaf0 { background-color: #fffaf0; }
+.bg-98fb98 { background-color: #98fb98; }
+.bg-ff8c00 { background-color: #ff8c00; }
+.bg-d8bfd8 { background-color: #d8bfd8; }
+.bg-faf0e6 { background-color: #faf0e6; }
+.bg-1e90ff { background-color: #1e90ff; }
+.bg-90ee90 { background-color: #90ee90; }
+.bg-daa520 { background-color: #daa520; }
+.bg-faebd7 { background-color: #faebd7; }
+.bg-6495ed { background-color: #6495ed; }
+.bg-00ff7f { background-color: #00ff7f; }
+.bg-cd853f { background-color: #cd853f; }
+.bg-ffefd5 { background-color: #ffefd5; }
+.bg-00bfff { background-color: #00bfff; }
+.bg-00fa9a { background-color: #00fa9a; }
+.bg-b8860b { background-color: #b8860b; }
+.bg-ee82ee { background-color: #ee82ee; }
+.bg-ffebcd { background-color: #ffebcd; }
+.bg-87cefa { background-color: #87cefa; }
+.bg-7cfc00 { background-color: #7cfc00; }
+.bg-d2691e { background-color: #d2691e; }
+.bg-dda0dd { background-color: #dda0dd; }
+.bg-ffe4c4 { background-color: #ffe4c4; }
+.bg-87ceeb { background-color: #87ceeb; }
+.bg-7fff00 { background-color: #7fff00; }
+.bg-a0522d { background-color: #a0522d; }
+.bg-da70d6 { background-color: #da70d6; }
+.bg-ffe4b5 { background-color: #ffe4b5; }
+.bg-add8e6 { background-color: #add8e6; }
+.bg-adff2f { background-color: #adff2f; }
+.bg-8b4513 { background-color: #8b4513; }
+.bg-ba55d3 { background-color: #ba55d3; }
+.bg-ffdead { background-color: #ffdead; }
+.bg-b0e0e6 { background-color: #b0e0e6; }
+.bg-800000 { background-color: #800000; }
+.bg-9932cc { background-color: #9932cc; }
+.bg-ffdab9 { background-color: #ffdab9; }
+.bg-afeeee { background-color: #afeeee; }
+.bg-32cd32 { background-color: #32cd32; }
+.bg-8b0000 { background-color: #8b0000; }
+.bg-9400d3 { background-color: #9400d3; }
+.bg-ffe4e1 { background-color: #ffe4e1; }
+.bg-e0ffff { background-color: #e0ffff; }
+.bg-9acd32 { background-color: #9acd32; }
+.bg-a52a2a { background-color: #a52a2a; }
+.bg-8b008b { background-color: #8b008b; }
+.bg-fff0f5 { background-color: #fff0f5; }
+.bg-556b2f { background-color: #556b2f; }
+.bg-b22222 { background-color: #b22222; }
+.bg-800080 { background-color: #800080; }
+.bg-fff5ee { background-color: #fff5ee; }
+.bg-6b8e23 { background-color: #6b8e23; }
+.bg-cd5c5c { background-color: #cd5c5c; }
+.bg-4b0082 { background-color: #4b0082; }
+.bg-fdf5e6 { background-color: #fdf5e6; }
+.bg-40e0d0 { background-color: #40e0d0; }
+.bg-808000 { background-color: #808000; }
+.bg-bc8f8f { background-color: #bc8f8f; }
+.bg-483d8b { background-color: #483d8b; }
+.bg-fffff0 { background-color: #fffff0; }
+.bg-48d1cc { background-color: #48d1cc; }
+.bg-bdb76b { background-color: #bdb76b; }
+.bg-e9967a { background-color: #e9967a; }
+.bg-8a2be2 { background-color: #8a2be2; }
+.bg-f0fff0 { background-color: #f0fff0; }
+.bg-00ced1 { background-color: #00ced1; }
+.bg-eee8aa { background-color: #eee8aa; }
+.bg-f08080 { background-color: #f08080; }
+.bg-9370db { background-color: #9370db; }
+.bg-f5fffa { background-color: #f5fffa; }
+.bg-20b2aa { background-color: #20b2aa; }
+.bg-fff8dc { background-color: #fff8dc; }
+.bg-fa8072 { background-color: #fa8072; }
+.bg-6a5acd { background-color: #6a5acd; }
+.bg-f0ffff { background-color: #f0ffff; }
+.bg-5f9ea0 { background-color: #5f9ea0; }
+.bg-f5f5dc { background-color: #f5f5dc; }
+.bg-ffa07a { background-color: #ffa07a; }
+.bg-7b68ee { background-color: #7b68ee; }
+/* 原色name */
+.bg-aliceblue { background-color: aliceblue; }
+.bg-darkcyan { background-color: darkcyan; }
+.bg-lightyellow { background-color: lightyellow; }
+.bg-coral { background-color: coral; }
+.bg-lavender { background-color: lavender; }
+.bg-teal { background-color: teal; }
+.bg-lightgoldenrodyellow { background-color: lightgoldenrodyellow; }
+.bg-tomato { background-color: tomato; }
+.bg-lightsteelblue { background-color: lightsteelblue; }
+.bg-darkslategray { background-color: darkslategray; }
+.bg-lemonchiffon { background-color: lemonchiffon; }
+.bg-lightslategray { background-color: lightslategray; }
+.bg-darkgreen { background-color: darkgreen; }
+.bg-wheat { background-color: wheat; }
+.bg-slategray { background-color: slategray; }
+.bg-green { background-color: green; }
+.bg-burlywood { background-color: burlywood; }
+.bg-crimson { background-color: crimson; }
+.bg-lightgrey { background-color: lightgrey; }
+.bg-steelblue { background-color: steelblue; }
+.bg-forestgreen { background-color: forestgreen; }
+.bg-tan { background-color: tan; }
+.bg-mediumvioletred { background-color: mediumvioletred; }
+.bg-royalblue { background-color: royalblue; }
+.bg-seagreen { background-color: seagreen; }
+.bg-khaki { background-color: khaki; }
+.bg-deeppink { background-color: deeppink; }
+.bg-whitesmoke { background-color: whitesmoke; }
+.bg-midnightblue { background-color: midnightblue; }
+.bg-mediumseagreen { background-color: mediumseagreen; }
+.bg-yellow { background-color: yellow; }
+.bg-hotpink { background-color: hotpink; }
+.bg-navy { background-color: navy; }
+.bg-mediumaquamarine { background-color: mediumaquamarine; }
+.bg-gold { background-color: gold; }
+.bg-palevioletred { background-color: palevioletred; }
+.bg-snow { background-color: snow; }
+.bg-darkblue { background-color: darkblue; }
+.bg-darkseagreen { background-color: darkseagreen; }
+.bg-orange { background-color: orange; }
+.bg-pink { background-color: pink; }
+.bg-ghostwhite { background-color: ghostwhite; }
+.bg-mediumblue { background-color: mediumblue; }
+.bg-aquamarine { background-color: aquamarine; }
+.bg-sandybrown { background-color: sandybrown; }
+.bg-lightpink { background-color: lightpink; }
+.bg-floralwhite { background-color: floralwhite; }
+.bg-palegreen { background-color: palegreen; }
+.bg-darkorange { background-color: darkorange; }
+.bg-thistle { background-color: thistle; }
+.bg-linen { background-color: linen; }
+.bg-dodgerblue { background-color: dodgerblue; }
+.bg-lightgreen { background-color: lightgreen; }
+.bg-goldenrod { background-color: goldenrod; }
+.bg-antiquewhite { background-color: antiquewhite; }
+.bg-cornflowerblue { background-color: cornflowerblue; }
+.bg-springgreen { background-color: springgreen; }
+.bg-peru { background-color: peru; }
+.bg-fuchsia { background-color: fuchsia; }
+.bg-papayawhip { background-color: papayawhip; }
+.bg-deepskyblue { background-color: deepskyblue; }
+.bg-mediumspringgreen { background-color: mediumspringgreen; }
+.bg-darkgoldenrod { background-color: darkgoldenrod; }
+.bg-violet { background-color: violet; }
+.bg-blanchedalmond { background-color: blanchedalmond; }
+.bg-lightskyblue { background-color: lightskyblue; }
+.bg-lawngreen { background-color: lawngreen; }
+.bg-chocolate { background-color: chocolate; }
+.bg-plum { background-color: plum; }
+.bg-bisque { background-color: bisque; }
+.bg-skyblue { background-color: skyblue; }
+.bg-chartreuse { background-color: chartreuse; }
+.bg-sienna { background-color: sienna; }
+.bg-orchid { background-color: orchid; }
+.bg-moccasin { background-color: moccasin; }
+.bg-lightblue { background-color: lightblue; }
+.bg-greenyellow { background-color: greenyellow; }
+.bg-saddlebrown { background-color: saddlebrown; }
+.bg-mediumorchid { background-color: mediumorchid; }
+.bg-navajowhite { background-color: navajowhite; }
+.bg-powderblue { background-color: powderblue; }
+.bg-lime { background-color: lime; }
+.bg-maroon { background-color: maroon; }
+.bg-darkorchid { background-color: darkorchid; }
+.bg-peachpuff { background-color: peachpuff; }
+.bg-paleturquoise { background-color: paleturquoise; }
+.bg-limegreen { background-color: limegreen; }
+.bg-darkred { background-color: darkred; }
+.bg-darkviolet { background-color: darkviolet; }
+.bg-mistyrose { background-color: mistyrose; }
+.bg-lightcyan { background-color: lightcyan; }
+.bg-yellowgreen { background-color: yellowgreen; }
+.bg-brown { background-color: brown; }
+.bg-darkmagenta { background-color: darkmagenta; }
+.bg-lavenderblush { background-color: lavenderblush; }
+.bg-darkolivegreen { background-color: darkolivegreen; }
+.bg-firebrick { background-color: firebrick; }
+.bg-purple { background-color: purple; }
+.bg-seashell { background-color: seashell; }
+.bg-aqua { background-color: aqua; }
+.bg-olivedrab { background-color: olivedrab; }
+.bg-indianred { background-color: indianred; }
+.bg-indigo { background-color: indigo; }
+.bg-oldlace { background-color: oldlace; }
+.bg-turquoise { background-color: turquoise; }
+.bg-olive { background-color: olive; }
+.bg-rosybrown { background-color: rosybrown; }
+.bg-darkslateblue { background-color: darkslateblue; }
+.bg-ivory { background-color: ivory; }
+.bg-mediumturquoise { background-color: mediumturquoise; }
+.bg-darkkhaki { background-color: darkkhaki; }
+.bg-darksalmon { background-color: darksalmon; }
+.bg-blueviolet { background-color: blueviolet; }
+.bg-honeydew { background-color: honeydew; }
+.bg-darkturquoise { background-color: darkturquoise; }
+.bg-palegoldenrod { background-color: palegoldenrod; }
+.bg-lightcoral { background-color: lightcoral; }
+.bg-mediumpurple { background-color: mediumpurple; }
+.bg-mintcream { background-color: mintcream; }
+.bg-lightseagreen { background-color: lightseagreen; }
+.bg-cornsilk { background-color: cornsilk; }
+.bg-salmon { background-color: salmon; }
+.bg-slateblue { background-color: slateblue; }
+.bg-azure { background-color: azure; }
+.bg-cadetblue { background-color: cadetblue; }
+.bg-beige { background-color: beige; }
+.bg-lightsalmon { background-color: lightsalmon; }
+.bg-mediumslateblue { background-color: mediumslateblue; }
+
+
+/* 罫線カラー */
+ /* web216 */
+.k-000000 { border-color: #000000; }
+.k-ffffcc { border-color: #ffffcc; }
+.k-99ff99 { border-color: #99ff99; }
+.k-66ffff { border-color: #66ffff; }
+.k-3333ff { border-color: #3333ff; }
+.k-ff00ff { border-color: #ff00ff; }
+.k-333333 { border-color: #333333; }
+.k-ffff99 { border-color: #ffff99; }
+.k-66ff66 { border-color: #66ff66; }
+.k-33ffff { border-color: #33ffff; }
+.k-0000ff { border-color: #0000ff; }
+.k-ff00cc { border-color: #ff00cc; }
+.k-666666 { border-color: #666666; }
+.k-ffff66 { border-color: #ffff66; }
+.k-33ff33 { border-color: #33ff33; }
+.k-00ffff { border-color: #00ffff; }
+.k-3300ff { border-color: #3300ff; }
+.k-cc0099 { border-color: #cc0099; }
+.k-999999 { border-color: #999999; }
+.k-ffff33 { border-color: #ffff33; }
+.k-00ff00 { border-color: #00ff00; }
+.k-00ccff { border-color: #00ccff; }
+.k-3300cc { border-color: #3300cc; }
+.k-ff33cc { border-color: #ff33cc; }
+.k-cccccc { border-color: #cccccc; }
+.k-ffff00 { border-color: #ffff00; }
+.k-00ff33 { border-color: #00ff33; }
+.k-0099cc { border-color: #0099cc; }
+.k-6633ff { border-color: #6633ff; }
+.k-990066 { border-color: #990066; }
+.k-ffffff { border-color: #ffffff; }
+.k-ccff00 { border-color: #ccff00; }
+.k-00cc33 { border-color: #00cc33; }
+.k-33ccff { border-color: #33ccff; }
+.k-330099 { border-color: #330099; }
+.k-cc3399 { border-color: #cc3399; }
+.k-ff3300 { border-color: #ff3300; }
+.k-99cc00 { border-color: #99cc00; }
+.k-33ff66 { border-color: #33ff66; }
+.k-006699 { border-color: #006699; }
+.k-6633cc { border-color: #6633cc; }
+.k-ff66cc { border-color: #ff66cc; }
+.k-cc3300 { border-color: #cc3300; }
+.k-ccff33 { border-color: #ccff33; }
+.k-009933 { border-color: #009933; }
+.k-3399cc { border-color: #3399cc; }
+.k-9966ff { border-color: #9966ff; }
+.k-ff0099 { border-color: #ff0099; }
+.k-ff6633 { border-color: #ff6633; }
+.k-669900 { border-color: #669900; }
+.k-33cc66 { border-color: #33cc66; }
+.k-66ccff { border-color: #66ccff; }
+.k-6600ff { border-color: #6600ff; }
+.k-660033 { border-color: #660033; }
+.k-993300 { border-color: #993300; }
+.k-99cc33 { border-color: #99cc33; }
+.k-66ff99 { border-color: #66ff99; }
+.k-0099ff { border-color: #0099ff; }
+.k-330066 { border-color: #330066; }
+.k-993366 { border-color: #993366; }
+.k-cc6633 { border-color: #cc6633; }
+.k-ccff66 { border-color: #ccff66; }
+.k-00ff66 { border-color: #00ff66; }
+.k-003366 { border-color: #003366; }
+.k-663399 { border-color: #663399; }
+.k-cc6699 { border-color: #cc6699; }
+.k-ff9966 { border-color: #ff9966; }
+.k-99ff00 { border-color: #99ff00; }
+.k-006633 { border-color: #006633; }
+.k-336699 { border-color: #336699; }
+.k-9966cc { border-color: #9966cc; }
+.k-cc0066 { border-color: #cc0066; }
+.k-ff6600 { border-color: #ff6600; }
+.k-336600 { border-color: #336600; }
+.k-339966 { border-color: #339966; }
+.k-6699cc { border-color: #6699cc; }
+.k-6600cc { border-color: #6600cc; }
+.k-ff99cc { border-color: #ff99cc; }
+.k-663300 { border-color: #663300; }
+.k-669933 { border-color: #669933; }
+.k-66cc99 { border-color: #66cc99; }
+.k-0066cc { border-color: #0066cc; }
+.k-cc99ff { border-color: #cc99ff; }
+.k-ff3399 { border-color: #ff3399; }
+.k-996633 { border-color: #996633; }
+.k-99cc66 { border-color: #99cc66; }
+.k-00cc66 { border-color: #00cc66; }
+.k-99ccff { border-color: #99ccff; }
+.k-9933ff { border-color: #9933ff; }
+.k-ff0066 { border-color: #ff0066; }
+.k-cc9966 { border-color: #cc9966; }
+.k-66cc00 { border-color: #66cc00; }
+.k-99ffcc { border-color: #99ffcc; }
+.k-3399ff { border-color: #3399ff; }
+.k-9900ff { border-color: #9900ff; }
+.k-990033 { border-color: #990033; }
+.k-cc6600 { border-color: #cc6600; }
+.k-ccff99 { border-color: #ccff99; }
+.k-33ff99 { border-color: #33ff99; }
+.k-0066ff { border-color: #0066ff; }
+.k-660099 { border-color: #660099; }
+.k-cc3366 { border-color: #cc3366; }
+.k-ffcc99 { border-color: #ffcc99; }
+.k-99ff33 { border-color: #99ff33; }
+.k-00ff99 { border-color: #00ff99; }
+.k-003399 { border-color: #003399; }
+.k-9933cc { border-color: #9933cc; }
+.k-ff6699 { border-color: #ff6699; }
+.k-ff9933 { border-color: #ff9933; }
+.k-66ff00 { border-color: #66ff00; }
+.k-009966 { border-color: #009966; }
+.k-3366cc { border-color: #3366cc; }
+.k-cc66ff { border-color: #cc66ff; }
+.k-cc0033 { border-color: #cc0033; }
+.k-ff9900 { border-color: #ff9900; }
+.k-339900 { border-color: #339900; }
+.k-33cc99 { border-color: #33cc99; }
+.k-6699ff { border-color: #6699ff; }
+.k-9900cc { border-color: #9900cc; }
+.k-ff3366 { border-color: #ff3366; }
+.k-996600 { border-color: #996600; }
+.k-66cc33 { border-color: #66cc33; }
+.k-66ffcc { border-color: #66ffcc; }
+.k-0033cc { border-color: #0033cc; }
+.k-cc33ff { border-color: #cc33ff; }
+.k-ff0033 { border-color: #ff0033; }
+.k-cc9933 { border-color: #cc9933; }
+.k-99ff66 { border-color: #99ff66; }
+.k-00cc99 { border-color: #00cc99; }
+.k-3366ff { border-color: #3366ff; }
+.k-cc00ff { border-color: #cc00ff; }
+.k-330000 { border-color: #330000; }
+.k-ffcc66 { border-color: #ffcc66; }
+.k-33cc00 { border-color: #33cc00; }
+.k-33ffcc { border-color: #33ffcc; }
+.k-0033ff { border-color: #0033ff; }
+.k-330033 { border-color: #330033; }
+.k-663333 { border-color: #663333; }
+.k-cc9900 { border-color: #cc9900; }
+.k-66ff33 { border-color: #66ff33; }
+.k-00ffcc { border-color: #00ffcc; }
+.k-000033 { border-color: #000033; }
+.k-663366 { border-color: #663366; }
+.k-660000 { border-color: #660000; }
+.k-ffcc33 { border-color: #ffcc33; }
+.k-33ff00 { border-color: #33ff00; }
+.k-003333 { border-color: #003333; }
+.k-333366 { border-color: #333366; }
+.k-660066 { border-color: #660066; }
+.k-996666 { border-color: #996666; }
+.k-ffcc00 { border-color: #ffcc00; }
+.k-003300 { border-color: #003300; }
+.k-336666 { border-color: #336666; }
+.k-000066 { border-color: #000066; }
+.k-996699 { border-color: #996699; }
+.k-993333 { border-color: #993333; }
+.k-333300 { border-color: #333300; }
+.k-336633 { border-color: #336633; }
+.k-006666 { border-color: #006666; }
+.k-666699 { border-color: #666699; }
+.k-993399 { border-color: #993399; }
+.k-990000 { border-color: #990000; }
+.k-666633 { border-color: #666633; }
+.k-006600 { border-color: #006600; }
+.k-669999 { border-color: #669999; }
+.k-333399 { border-color: #333399; }
+.k-990099 { border-color: #990099; }
+.k-cc9999 { border-color: #cc9999; }
+.k-666600 { border-color: #666600; }
+.k-669966 { border-color: #669966; }
+.k-339999 { border-color: #339999; }
+.k-000099 { border-color: #000099; }
+.k-cc99cc { border-color: #cc99cc; }
+.k-cc6666 { border-color: #cc6666; }
+.k-999966 { border-color: #999966; }
+.k-339933 { border-color: #339933; }
+.k-009999 { border-color: #009999; }
+.k-9999cc { border-color: #9999cc; }
+.k-cc66cc { border-color: #cc66cc; }
+.k-cc3333 { border-color: #cc3333; }
+.k-999933 { border-color: #999933; }
+.k-009900 { border-color: #009900; }
+.k-99cccc { border-color: #99cccc; }
+.k-6666cc { border-color: #6666cc; }
+.k-cc33cc { border-color: #cc33cc; }
+.k-cc0000 { border-color: #cc0000; }
+.k-999900 { border-color: #999900; }
+.k-99cc99 { border-color: #99cc99; }
+.k-66cccc { border-color: #66cccc; }
+.k-3333cc { border-color: #3333cc; }
+.k-cc00cc { border-color: #cc00cc; }
+.k-ffcccc { border-color: #ffcccc; }
+.k-cccc99 { border-color: #cccc99; }
+.k-66cc66 { border-color: #66cc66; }
+.k-33cccc { border-color: #33cccc; }
+.k-0000cc { border-color: #0000cc; }
+.k-ffccff { border-color: #ffccff; }
+.k-ff9999 { border-color: #ff9999; }
+.k-cccc66 { border-color: #cccc66; }
+.k-33cc33 { border-color: #33cc33; }
+.k-00cccc { border-color: #00cccc; }
+.k-ccccff { border-color: #ccccff; }
+.k-ff99ff { border-color: #ff99ff; }
+.k-ff6666 { border-color: #ff6666; }
+.k-cccc33 { border-color: #cccc33; }
+.k-00cc00 { border-color: #00cc00; }
+.k-ccffff { border-color: #ccffff; }
+.k-9999ff { border-color: #9999ff; }
+.k-ff66ff { border-color: #ff66ff; }
+.k-ff3333 { border-color: #ff3333; }
+.k-cccc00 { border-color: #cccc00; }
+.k-ccffcc { border-color: #ccffcc; }
+.k-99ffff { border-color: #99ffff; }
+.k-6666ff { border-color: #6666ff; }
+.k-ff33ff { border-color: #ff33ff; }
+.k-ff0000 { border-color: #ff0000; }
+/* 原色code */
+.k-f0f8ff { border-color: #f0f8ff; }
+.k-008b8b { border-color: #008b8b; }
+.k-ffffe0 { border-color: #ffffe0; }
+.k-ff7f50 { border-color: #ff7f50; }
+.k-696969 { border-color: #696969; }
+.k-e6e6fa { border-color: #e6e6fa; }
+.k-008080 { border-color: #008080; }
+.k-fafad2 { border-color: #fafad2; }
+.k-ff6347 { border-color: #ff6347; }
+.k-808080 { border-color: #808080; }
+.k-b0c4de { border-color: #b0c4de; }
+.k-2f4f4f { border-color: #2f4f4f; }
+.k-fffacd { border-color: #fffacd; }
+.k-ff4500 { border-color: #ff4500; }
+.k-a9a9a9 { border-color: #a9a9a9; }
+.k-778899 { border-color: #778899; }
+.k-006400 { border-color: #006400; }
+.k-f5deb3 { border-color: #f5deb3; }
+.k-c0c0c0 { border-color: #c0c0c0; }
+.k-708090 { border-color: #708090; }
+.k-008000 { border-color: #008000; }
+.k-deb887 { border-color: #deb887; }
+.k-dc143c { border-color: #dc143c; }
+.k-d3d3d3 { border-color: #d3d3d3; }
+.k-4682b4 { border-color: #4682b4; }
+.k-228b22 { border-color: #228b22; }
+.k-d2b48c { border-color: #d2b48c; }
+.k-c71585 { border-color: #c71585; }
+.k-dcdcdc { border-color: #dcdcdc; }
+.k-4169e1 { border-color: #4169e1; }
+.k-2e8b57 { border-color: #2e8b57; }
+.k-f0e68c { border-color: #f0e68c; }
+.k-ff1493 { border-color: #ff1493; }
+.k-f5f5f5 { border-color: #f5f5f5; }
+.k-191970 { border-color: #191970; }
+.k-3cb371 { border-color: #3cb371; }
+.k-ff69b4 { border-color: #ff69b4; }
+.k-000080 { border-color: #000080; }
+.k-66cdaa { border-color: #66cdaa; }
+.k-ffd700 { border-color: #ffd700; }
+.k-db7093 { border-color: #db7093; }
+.k-fffafa { border-color: #fffafa; }
+.k-00008b { border-color: #00008b; }
+.k-8fbc8f { border-color: #8fbc8f; }
+.k-ffa500 { border-color: #ffa500; }
+.k-ffc0cb { border-color: #ffc0cb; }
+.k-f8f8ff { border-color: #f8f8ff; }
+.k-0000cd { border-color: #0000cd; }
+.k-7fffd4 { border-color: #7fffd4; }
+.k-f4a460 { border-color: #f4a460; }
+.k-ffb6c1 { border-color: #ffb6c1; }
+.k-fffaf0 { border-color: #fffaf0; }
+.k-98fb98 { border-color: #98fb98; }
+.k-ff8c00 { border-color: #ff8c00; }
+.k-d8bfd8 { border-color: #d8bfd8; }
+.k-faf0e6 { border-color: #faf0e6; }
+.k-1e90ff { border-color: #1e90ff; }
+.k-90ee90 { border-color: #90ee90; }
+.k-daa520 { border-color: #daa520; }
+.k-faebd7 { border-color: #faebd7; }
+.k-6495ed { border-color: #6495ed; }
+.k-00ff7f { border-color: #00ff7f; }
+.k-cd853f { border-color: #cd853f; }
+.k-ffefd5 { border-color: #ffefd5; }
+.k-00bfff { border-color: #00bfff; }
+.k-00fa9a { border-color: #00fa9a; }
+.k-b8860b { border-color: #b8860b; }
+.k-ee82ee { border-color: #ee82ee; }
+.k-ffebcd { border-color: #ffebcd; }
+.k-87cefa { border-color: #87cefa; }
+.k-7cfc00 { border-color: #7cfc00; }
+.k-d2691e { border-color: #d2691e; }
+.k-dda0dd { border-color: #dda0dd; }
+.k-ffe4c4 { border-color: #ffe4c4; }
+.k-87ceeb { border-color: #87ceeb; }
+.k-7fff00 { border-color: #7fff00; }
+.k-a0522d { border-color: #a0522d; }
+.k-da70d6 { border-color: #da70d6; }
+.k-ffe4b5 { border-color: #ffe4b5; }
+.k-add8e6 { border-color: #add8e6; }
+.k-adff2f { border-color: #adff2f; }
+.k-8b4513 { border-color: #8b4513; }
+.k-ba55d3 { border-color: #ba55d3; }
+.k-ffdead { border-color: #ffdead; }
+.k-b0e0e6 { border-color: #b0e0e6; }
+.k-800000 { border-color: #800000; }
+.k-9932cc { border-color: #9932cc; }
+.k-ffdab9 { border-color: #ffdab9; }
+.k-afeeee { border-color: #afeeee; }
+.k-32cd32 { border-color: #32cd32; }
+.k-8b0000 { border-color: #8b0000; }
+.k-9400d3 { border-color: #9400d3; }
+.k-ffe4e1 { border-color: #ffe4e1; }
+.k-e0ffff { border-color: #e0ffff; }
+.k-9acd32 { border-color: #9acd32; }
+.k-a52a2a { border-color: #a52a2a; }
+.k-8b008b { border-color: #8b008b; }
+.k-fff0f5 { border-color: #fff0f5; }
+.k-556b2f { border-color: #556b2f; }
+.k-b22222 { border-color: #b22222; }
+.k-800080 { border-color: #800080; }
+.k-fff5ee { border-color: #fff5ee; }
+.k-6b8e23 { border-color: #6b8e23; }
+.k-cd5c5c { border-color: #cd5c5c; }
+.k-4b0082 { border-color: #4b0082; }
+.k-fdf5e6 { border-color: #fdf5e6; }
+.k-40e0d0 { border-color: #40e0d0; }
+.k-808000 { border-color: #808000; }
+.k-bc8f8f { border-color: #bc8f8f; }
+.k-483d8b { border-color: #483d8b; }
+.k-fffff0 { border-color: #fffff0; }
+.k-48d1cc { border-color: #48d1cc; }
+.k-bdb76b { border-color: #bdb76b; }
+.k-e9967a { border-color: #e9967a; }
+.k-8a2be2 { border-color: #8a2be2; }
+.k-f0fff0 { border-color: #f0fff0; }
+.k-00ced1 { border-color: #00ced1; }
+.k-eee8aa { border-color: #eee8aa; }
+.k-f08080 { border-color: #f08080; }
+.k-9370db { border-color: #9370db; }
+.k-f5fffa { border-color: #f5fffa; }
+.k-20b2aa { border-color: #20b2aa; }
+.k-fff8dc { border-color: #fff8dc; }
+.k-fa8072 { border-color: #fa8072; }
+.k-6a5acd { border-color: #6a5acd; }
+.k-f0ffff { border-color: #f0ffff; }
+.k-5f9ea0 { border-color: #5f9ea0; }
+.k-f5f5dc { border-color: #f5f5dc; }
+.k-ffa07a { border-color: #ffa07a; }
+.k-7b68ee { border-color: #7b68ee; }
+/* 原色name */
+.k-aliceblue { border-color: aliceblue; }
+.k-darkcyan { border-color: darkcyan; }
+.k-lightyellow { border-color: lightyellow; }
+.k-coral { border-color: coral; }
+.k-lavender { border-color: lavender; }
+.k-teal { border-color: teal; }
+.k-lightgoldenrodyellow { border-color: lightgoldenrodyellow; }
+.k-tomato { border-color: tomato; }
+.k-lightsteelblue { border-color: lightsteelblue; }
+.k-darkslategray { border-color: darkslategray; }
+.k-lemonchiffon { border-color: lemonchiffon; }
+.k-lightslategray { border-color: lightslategray; }
+.k-darkgreen { border-color: darkgreen; }
+.k-wheat { border-color: wheat; }
+.k-slategray { border-color: slategray; }
+.k-green { border-color: green; }
+.k-burlywood { border-color: burlywood; }
+.k-crimson { border-color: crimson; }
+.k-lightgrey { border-color: lightgrey; }
+.k-steelblue { border-color: steelblue; }
+.k-forestgreen { border-color: forestgreen; }
+.k-tan { border-color: tan; }
+.k-mediumvioletred { border-color: mediumvioletred; }
+.k-royalblue { border-color: royalblue; }
+.k-seagreen { border-color: seagreen; }
+.k-khaki { border-color: khaki; }
+.k-deeppink { border-color: deeppink; }
+.k-whitesmoke { border-color: whitesmoke; }
+.k-midnightblue { border-color: midnightblue; }
+.k-mediumseagreen { border-color: mediumseagreen; }
+.k-yellow { border-color: yellow; }
+.k-hotpink { border-color: hotpink; }
+.k-navy { border-color: navy; }
+.k-mediumaquamarine { border-color: mediumaquamarine; }
+.k-gold { border-color: gold; }
+.k-palevioletred { border-color: palevioletred; }
+.k-snow { border-color: snow; }
+.k-darkblue { border-color: darkblue; }
+.k-darkseagreen { border-color: darkseagreen; }
+.k-orange { border-color: orange; }
+.k-pink { border-color: pink; }
+.k-ghostwhite { border-color: ghostwhite; }
+.k-mediumblue { border-color: mediumblue; }
+.k-aquamarine { border-color: aquamarine; }
+.k-sandybrown { border-color: sandybrown; }
+.k-lightpink { border-color: lightpink; }
+.k-floralwhite { border-color: floralwhite; }
+.k-palegreen { border-color: palegreen; }
+.k-darkorange { border-color: darkorange; }
+.k-thistle { border-color: thistle; }
+.k-linen { border-color: linen; }
+.k-dodgerblue { border-color: dodgerblue; }
+.k-lightgreen { border-color: lightgreen; }
+.k-goldenrod { border-color: goldenrod; }
+.k-antiquewhite { border-color: antiquewhite; }
+.k-cornflowerblue { border-color: cornflowerblue; }
+.k-springgreen { border-color: springgreen; }
+.k-peru { border-color: peru; }
+.k-fuchsia { border-color: fuchsia; }
+.k-papayawhip { border-color: papayawhip; }
+.k-deepskyblue { border-color: deepskyblue; }
+.k-mediumspringgreen { border-color: mediumspringgreen; }
+.k-darkgoldenrod { border-color: darkgoldenrod; }
+.k-violet { border-color: violet; }
+.k-blanchedalmond { border-color: blanchedalmond; }
+.k-lightskyblue { border-color: lightskyblue; }
+.k-lawngreen { border-color: lawngreen; }
+.k-chocolate { border-color: chocolate; }
+.k-plum { border-color: plum; }
+.k-bisque { border-color: bisque; }
+.k-skyblue { border-color: skyblue; }
+.k-chartreuse { border-color: chartreuse; }
+.k-sienna { border-color: sienna; }
+.k-orchid { border-color: orchid; }
+.k-moccasin { border-color: moccasin; }
+.k-lightblue { border-color: lightblue; }
+.k-greenyellow { border-color: greenyellow; }
+.k-saddlebrown { border-color: saddlebrown; }
+.k-mediumorchid { border-color: mediumorchid; }
+.k-navajowhite { border-color: navajowhite; }
+.k-powderblue { border-color: powderblue; }
+.k-lime { border-color: lime; }
+.k-maroon { border-color: maroon; }
+.k-darkorchid { border-color: darkorchid; }
+.k-peachpuff { border-color: peachpuff; }
+.k-paleturquoise { border-color: paleturquoise; }
+.k-limegreen { border-color: limegreen; }
+.k-darkred { border-color: darkred; }
+.k-darkviolet { border-color: darkviolet; }
+.k-mistyrose { border-color: mistyrose; }
+.k-lightcyan { border-color: lightcyan; }
+.k-yellowgreen { border-color: yellowgreen; }
+.k-brown { border-color: brown; }
+.k-darkmagenta { border-color: darkmagenta; }
+.k-lavenderblush { border-color: lavenderblush; }
+.k-darkolivegreen { border-color: darkolivegreen; }
+.k-firebrick { border-color: firebrick; }
+.k-purple { border-color: purple; }
+.k-seashell { border-color: seashell; }
+.k-aqua { border-color: aqua; }
+.k-olivedrab { border-color: olivedrab; }
+.k-indianred { border-color: indianred; }
+.k-indigo { border-color: indigo; }
+.k-oldlace { border-color: oldlace; }
+.k-turquoise { border-color: turquoise; }
+.k-olive { border-color: olive; }
+.k-rosybrown { border-color: rosybrown; }
+.k-darkslateblue { border-color: darkslateblue; }
+.k-ivory { border-color: ivory; }
+.k-mediumturquoise { border-color: mediumturquoise; }
+.k-darkkhaki { border-color: darkkhaki; }
+.k-darksalmon { border-color: darksalmon; }
+.k-blueviolet { border-color: blueviolet; }
+.k-honeydew { border-color: honeydew; }
+.k-darkturquoise { border-color: darkturquoise; }
+.k-palegoldenrod { border-color: palegoldenrod; }
+.k-lightcoral { border-color: lightcoral; }
+.k-mediumpurple { border-color: mediumpurple; }
+.k-mintcream { border-color: mintcream; }
+.k-lightseagreen { border-color: lightseagreen; }
+.k-cornsilk { border-color: cornsilk; }
+.k-salmon { border-color: salmon; }
+.k-slateblue { border-color: slateblue; }
+.k-azure { border-color: azure; }
+.k-cadetblue { border-color: cadetblue; }
+.k-beige { border-color: beige; }
+.k-lightsalmon { border-color: lightsalmon; }
+.k-mediumslateblue { border-color: mediumslateblue; }

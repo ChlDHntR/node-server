@@ -9,19 +9,31 @@ const runWriter = () => {
     const obj = JSON.parse(dat)
     const words = obj.words
     //Write kanji only json
-    const kanjiArr = words.map((entry) => {
-      let ret = [[], []]
+
+    const keyMap = {}
+
+    words.forEach((entry, index) => {
       if (entry.kanji[0]) {
-        ret[0] = entry.kanji.map((item) => item.text)
+        entry.kanji.forEach((item) => {
+          if (keyMap[item.text]) {
+            keyMap[item.text].push(index)
+          } else {
+            keyMap[item.text] = [index]
+          }
+        })
       }
       if (entry.kana[0]) {
-        ret[1] = entry.kana.map((item) => item.text)
+        entry.kana.forEach((item) => {
+          if (keyMap[item.text]) {
+            keyMap[item.text].push(index)
+          } else {
+            keyMap[item.text] = [index]
+          }
+        })
       }
-      return ret
     })
 
-    const kanjiObj = { words: kanjiArr }
-    const jsonDat = JSON.stringify(kanjiObj)
+    const jsonDat = JSON.stringify(keyMap)
 
     //Write only first 200 entry
     // let retArr = []
@@ -39,7 +51,7 @@ const runWriter = () => {
     // })
     // const jsonDat = JSON.stringify({words: retArr})
 
-    fs.writeFile('./src/json/wordDict.json', jsonDat, (err) => {
+    fs.writeFile('./src/json/MapIndex.json', jsonDat, (err) => {
       if (err) {
         console.error(err)
 
