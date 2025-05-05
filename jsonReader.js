@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 
-let kanjiData, allData, kanaData, answer
+let kanjiData, allData, kanaData
 
 try {
   kanjiData = fs.readFileSync('./src/json/MapIndex.json')
@@ -33,7 +33,7 @@ function containsKanji(str) {
 
 export const runReader = (text) => {
   let index = null
-
+  let array = []
   // if (containsKanji(text)) {
   //   for (let i = 0; i <= kanjiDataObj.words.length - 1; i++) {
   //     if (kanjiDataObj.words[i][0].includes(text)) {
@@ -56,17 +56,17 @@ export const runReader = (text) => {
     return 'no result found'
   }
 
-  index = kanjiDataObj[text][0]
+  kanjiDataObj[text].forEach((index) => {
+    let kanaResult = kanaDataObj.words[index]
+    let ret = allDataObj.words[index]
 
-  let kanaResult = kanaDataObj.words[index]
-  let ret = allDataObj.words[index]
+    array.push({
+      definition: wordList(ret),
+      kanaReading: kanaResult,
+    })
+  })
 
-  answer = {
-    definition: wordList(ret),
-    kanaReading: kanaResult,
-  }
-
-  return answer
+  return { answer: array }
 }
 
-//console.log(runReader('挨拶')) // Example usage
+//console.log(runReader('ぎそう')) // Example usage
