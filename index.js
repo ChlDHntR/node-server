@@ -8,12 +8,15 @@
 // const PORT = 3003
 // app.listen(PORT)
 // console.log(`Server running on port ${PORT}`)
+import { config } from 'dotenv'
 import { runReader } from './jsonReader.js'
 import express from 'express'
 import cors from 'cors'
 import { fileURLToPath } from 'url'
 import { dirname } from 'path'
 import path from 'path'
+
+config() // Load environment variables from .env file
 
 //const express = require('express')
 const __filename = fileURLToPath(import.meta.url)
