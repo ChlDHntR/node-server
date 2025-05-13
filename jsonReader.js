@@ -11,10 +11,12 @@ try {
   console.error(err)
 }
 
+
 const indexDataObj = JSON.parse(indexData)
 const allDataObj = JSON.parse(allData)
 const kanaDataObj = JSON.parse(kanaData)
 const kanjiDataObj = JSON.parse(kanjiData)
+
 
 const mapFunc = (arr, key) => {
   return arr.map((entry) => entry[key])

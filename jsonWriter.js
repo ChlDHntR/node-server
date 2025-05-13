@@ -81,6 +81,7 @@ const runWriter = () => {
     // const jsonDat = JSON.stringify({words: retArr})
 
     fs.writeFile('./src/json/****.json', jsonDat, (err) => {
+
       if (err) {
         console.error(err)
 
