@@ -1,18 +1,22 @@
 import * as fs from 'fs'
 
-let kanjiData, allData, kanaData
+let indexData, allData, kanaData, kanjiData
 
 try {
-  kanjiData = fs.readFileSync('./src/json/MapIndex.json')
+  indexData = fs.readFileSync('./src/json/MapIndex.json')
+  kanjiData = fs.readFileSync('./src/json/kanjiOnly.json')
   allData = fs.readFileSync('./src/json/meaning.json')
   kanaData = fs.readFileSync('./src/json/kana-only.json')
 } catch (err) {
   console.error(err)
 }
 
-const kanjiDataObj = JSON.parse(kanjiData)
+
+const indexDataObj = JSON.parse(indexData)
 const allDataObj = JSON.parse(allData)
 const kanaDataObj = JSON.parse(kanaData)
+const kanjiDataObj = JSON.parse(kanjiData)
+
 
 const mapFunc = (arr, key) => {
   return arr.map((entry) => entry[key])
@@ -52,17 +56,19 @@ export const runReader = (text) => {
   //   }
   // }
 
-  if (!kanjiDataObj[text]) {
+  if (!indexDataObj[text]) {
     return 'no result found'
   }
 
-  kanjiDataObj[text].forEach((index) => {
+  indexDataObj[text].forEach((index) => {
     let kanaResult = kanaDataObj.words[index]
     let ret = allDataObj.words[index]
+    let kanjiResult = kanjiDataObj.words[index]
 
     array.push({
       definition: wordList(ret),
       kanaReading: kanaResult,
+      kanjiWriting: kanjiResult
     })
   })
 

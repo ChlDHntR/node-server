@@ -8,25 +8,38 @@ const runWriter = () => {
     }
     const obj = JSON.parse(dat)
     const words = obj.words
+    const meaningArr = { words: [] }
     //Write kanji only json
+    words.forEach((element, index) => {
+      let kanjiArr = []
+      element.kanji.forEach((childElement) => {
+        if (index === 20000) {
+          console.log(childElement)
+        }
+        kanjiArr.push(childElement.text)
+      })
+      meaningArr.words.push(kanjiArr)
+    });
+
+
+
 
     //const keyMap = {}
-    const meaningArr = { words: [] }
 
     // write kanji/kana file map
-    words.forEach((entry, index) => {
-      if (entry.kana[0]) {
-        let kanaString = ''
-        entry.kana.forEach((item, index) => {
-          if (index < entry.kana.length - 1) {
-            kanaString += item.text + ', '
-          } else {
-            kanaString += item.text
-          }
-        })
-        meaningArr.words[index] = kanaString
-      }
-    })
+    // words.forEach((entry, index) => {
+    //   if (entry.kana[0]) {
+    //     let kanaString = ''
+    //     entry.kana.forEach((item, index) => {
+    //       if (index < entry.kana.length - 1) {
+    //         kanaString += item.text + ', '
+    //       } else {
+    //         kanaString += item.text
+    //       }
+    //     })
+    //     meaningArr.words[index] = kanaString
+    //   }
+    // })
 
     // write meaning file
     // words.forEach((entry, index) => {
@@ -67,7 +80,8 @@ const runWriter = () => {
     // })
     // const jsonDat = JSON.stringify({words: retArr})
 
-    fs.writeFile('./src/json/kana-only.json', jsonDat, (err) => {
+    fs.writeFile('./src/json/****.json', jsonDat, (err) => {
+
       if (err) {
         console.error(err)
 
