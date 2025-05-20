@@ -23,6 +23,10 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const app = express()
 
+  const list = {
+    list: ['alice', 'book', 'book2', 'makeine4_2', 'makeine5']
+  }
+
 // Middleware
 const unknownEndpoint = (req, res) => {
   res.status(404).send({ error: 'unknown endpoint' })
@@ -70,10 +74,8 @@ app.get('/api/notes', (req, res) => {
   res.json(notes)
 })
 
-app.get('/api/notes/:id', (req, res) => {
-  const id = req.params.id
-  const note = notes.find((note) => note.id === id)
-  res.send(note)
+app.get('/api/booklist', (req, res) => {
+  res.json(list)
 })
 
 app.delete('/api/notes/:id', (req, res) => {
