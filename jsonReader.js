@@ -37,7 +37,7 @@ function containsKanji(str) {
 }
 
 export const runReader = (text) => {
-  let monoLangAns 
+  let monoLangAns = 'no result found'
   let array = []
   // if (containsKanji(text)) {
   //   for (let i = 0; i <= kanjiDataObj.words.length - 1; i++) {
@@ -57,11 +57,11 @@ export const runReader = (text) => {
   //   }
   // }
 
-  if (!indexDataObj[text]) {
+  if (!indexDataObj[text] && !monoLangObj[text]) {
     return 'no result found'
   }
 
-  if (monoLangObj[text]) {
+  if (monoLangObj) {
     monoLangAns = monoLangObj[text]
   }
 
