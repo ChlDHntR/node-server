@@ -75,4 +75,4 @@ export const runReader = (text) => {
   return { answer: array }
 }
 
-console.log(runReader('学校').answer[0].kanjiWriting) // Example usage
+//console.log(runReader('学校').answer[0].kanjiWriting) // Example usage
