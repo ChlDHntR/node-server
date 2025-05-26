@@ -12,7 +12,6 @@ try {
   console.error(err)
 }
 
-
 const indexDataObj = JSON.parse(indexData)
 const allDataObj = JSON.parse(allData)
 const kanaDataObj = JSON.parse(kanaData)
@@ -38,7 +37,7 @@ function containsKanji(str) {
 
 export const runReader = (text) => {
   let monoLangAns = 'no result found'
-  let array = []
+  let array
   // if (containsKanji(text)) {
   //   for (let i = 0; i <= kanjiDataObj.words.length - 1; i++) {
   //     if (kanjiDataObj.words[i][0].includes(text)) {
@@ -57,25 +56,28 @@ export const runReader = (text) => {
   //   }
   // }
 
-  if (!indexDataObj[text] && !monoLangObj[text]) {
-    return 'no result found'
-  }
+  // if (!indexDataObj[text] && !monoLangObj[text]) {
+  //   return 'no result found'
+  // }
 
-  if (monoLangObj) {
-    monoLangAns = monoLangObj[text]
-  }
+  if (!indexDataObj[text]) {
+    array = 'no result found'
+  } else {
+    indexDataObj[text].forEach((index) => {
+      let kanaResult = kanaDataObj.words[index]
+      let ret = allDataObj.words[index]
+      let kanjiResult = kanjiDataObj.words[index]
 
-  indexDataObj[text].forEach((index) => {
-    let kanaResult = kanaDataObj.words[index]
-    let ret = allDataObj.words[index]
-    let kanjiResult = kanjiDataObj.words[index]
-
-    array.push({
-      definition: wordList(ret),
-      kanaReading: kanaResult,
-      kanjiWriting: kanjiResult
+      array.push({
+        definition: wordList(ret),
+        kanaReading: kanaResult,
+        kanjiWriting: kanjiResult,
+      })
     })
-  })
+  }
+  
+  monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
+  
   return { answer: array, answer2: monoLangAns }
 }
 
