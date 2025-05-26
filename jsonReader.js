@@ -1,22 +1,22 @@
 import * as fs from 'fs'
 
-let indexData, allData, kanaData, kanjiData
+let indexData, allData, kanaData, kanjiData, monoLangData
 
 try {
   indexData = fs.readFileSync('./src/json/MapIndex.json')
   kanjiData = fs.readFileSync('./src/json/kanjiOnly.json')
   allData = fs.readFileSync('./src/json/meaning.json')
   kanaData = fs.readFileSync('./src/json/kana-only.json')
+  monoLangData = fs.readFileSync('./src/json/monolang/result/map.json')
 } catch (err) {
   console.error(err)
 }
-
 
 const indexDataObj = JSON.parse(indexData)
 const allDataObj = JSON.parse(allData)
 const kanaDataObj = JSON.parse(kanaData)
 const kanjiDataObj = JSON.parse(kanjiData)
-
+const monoLangObj = JSON.parse(monoLangData)
 
 const mapFunc = (arr, key) => {
   return arr.map((entry) => entry[key])
@@ -36,8 +36,8 @@ function containsKanji(str) {
 }
 
 export const runReader = (text) => {
-  let index = null
-  let array = []
+  let monoLangAns = 'no result found'
+  let array
   // if (containsKanji(text)) {
   //   for (let i = 0; i <= kanjiDataObj.words.length - 1; i++) {
   //     if (kanjiDataObj.words[i][0].includes(text)) {
@@ -56,23 +56,29 @@ export const runReader = (text) => {
   //   }
   // }
 
+  // if (!indexDataObj[text] && !monoLangObj[text]) {
+  //   return 'no result found'
+  // }
+
   if (!indexDataObj[text]) {
-    return 'no result found'
-  }
+    array = 'no result found'
+  } else {
+    indexDataObj[text].forEach((index) => {
+      let kanaResult = kanaDataObj.words[index]
+      let ret = allDataObj.words[index]
+      let kanjiResult = kanjiDataObj.words[index]
 
-  indexDataObj[text].forEach((index) => {
-    let kanaResult = kanaDataObj.words[index]
-    let ret = allDataObj.words[index]
-    let kanjiResult = kanjiDataObj.words[index]
-
-    array.push({
-      definition: wordList(ret),
-      kanaReading: kanaResult,
-      kanjiWriting: kanjiResult
+      array.push({
+        definition: wordList(ret),
+        kanaReading: kanaResult,
+        kanjiWriting: kanjiResult,
+      })
     })
-  })
-
-  return { answer: array }
+  }
+  
+  monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
+  
+  return { answer: array, answer2: monoLangAns }
 }
 
-console.log(runReader('学校').answer[0].kanjiWriting) // Example usage
+//runReader('学校') // Example usage
