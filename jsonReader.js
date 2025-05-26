@@ -67,6 +67,7 @@ export const runReader = (text) => {
       let kanaResult = kanaDataObj.words[index]
       let ret = allDataObj.words[index]
       let kanjiResult = kanjiDataObj.words[index]
+      array = []
 
       array.push({
         definition: wordList(ret),
