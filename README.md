@@ -1,1 +1,1 @@
-a simple API server serves as a dictionary that return results
+a simple API server serves for ebook reader with Japanese dictionary
