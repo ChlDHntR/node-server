@@ -24,7 +24,7 @@ const __dirname = dirname(__filename)
 const app = express()
 
   const list = {
-    list: ['alice', 'book', 'book2', 'makeine4_2', 'makeine5']
+    list: ['book', 'makeine4', 'makeine5']
   }
 
 // Middleware
