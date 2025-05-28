@@ -82,4 +82,4 @@ export const runReader = (text) => {
   return { answer: array, answer2: monoLangAns }
 }
 
-console.log(runReader('ぎひょう')) // Example usage
+//console.log(runReader('ぎひょう')) // Example usage
