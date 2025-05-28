@@ -63,11 +63,11 @@ export const runReader = (text) => {
   if (!indexDataObj[text]) {
     array = 'no result found'
   } else {
+    array = []
     indexDataObj[text].forEach((index) => {
       let kanaResult = kanaDataObj.words[index]
       let ret = allDataObj.words[index]
       let kanjiResult = kanjiDataObj.words[index]
-      array = []
 
       array.push({
         definition: wordList(ret),
@@ -76,10 +76,10 @@ export const runReader = (text) => {
       })
     })
   }
-  
+
   monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
-  
+
   return { answer: array, answer2: monoLangAns }
 }
 
-//runReader('学校') // Example usage
+console.log(runReader('ぎひょう')) // Example usage
