@@ -1,4 +1,5 @@
-import * as fs from 'fs'
+const fs = require('fs')
+const kuromoji = require('kuromoji')
 
 let indexData, allData, kanaData, kanjiData, monoLangData
 
@@ -31,55 +32,73 @@ const wordList = (array) => {
   return final
 }
 
-function containsKanji(str) {
-  return /[\u4E00-\u9FAF]/.test(str)
-}
+// function containsKanji(str) {
+//   return /[\u4E00-\u9FAF]/.test(str)
+// }
 
-export const runReader = (text) => {
-  let monoLangAns = 'no result found'
-  let array
-  // if (containsKanji(text)) {
-  //   for (let i = 0; i <= kanjiDataObj.words.length - 1; i++) {
-  //     if (kanjiDataObj.words[i][0].includes(text)) {
-  //       //console.log(`found ${text} at index ${i}`)
-  //       index = i
-  //       break
-  //     }
-  //   }
-  // } else {
-  //   for (let i = 0; i <= allDataObj.words.length - 1; i++) {
-  //     if (kanjiDataObj.words[i][1].includes(text)) {
-  //       //console.log(`found ${text} at index ${i}`)
-  //       index = i
-  //       break
-  //     }
-  //   }
-  // }
+const runReader = async (text) => {
+    let monoLangAns = 'no result found'
+    let array
 
-  // if (!indexDataObj[text] && !monoLangObj[text]) {
-  //   return 'no result found'
-  // }
+    //Return result from searching json dict
+    const getResult = async (text) => {
+      let res = null
+      try {
+        res = await text()
+        return 'huh'
+      } catch (e) {
+        console.log(e)
+      } finally {
+        if (!indexDataObj[res]) {
+          return 'no result found'
+        }
+        
+        let returnArray
+        
+        indexDataObj[text].forEach((index) => {
+          let kanaResult = kanaDataObj.words[index]
+          let ret = allDataObj.words[index]
+          let kanjiResult = kanjiDataObj.words[index]
+          returnArray = []
+          
+          returnArray.push({
+            definition: wordList(ret),
+            kanaReading: kanaResult,
+            kanjiWriting: kanjiResult,
+          })
+        })
+        
+        return { answer: res, answer2: monoLangAns }
+      }
+      
+    }
 
-  if (!indexDataObj[text]) {
-    array = 'no result found'
-  } else {
-    indexDataObj[text].forEach((index) => {
-      let kanaResult = kanaDataObj.words[index]
-      let ret = allDataObj.words[index]
-      let kanjiResult = kanjiDataObj.words[index]
-      array = []
+    kuromoji
+      .builder({ dicPath: './src/json/dict' })
+      .build(function (err, tokenizer) {
+        // tokenizer is ready
 
-      array.push({
-        definition: wordList(ret),
-        kanaReading: kanaResult,
-        kanjiWriting: kanjiResult,
+        array = getResult(() => tokenizer.tokenize('待っている'))
       })
-    })
-  }
-  
-  monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
-  
-  return { answer: array, answer2: monoLangAns }
+
+  // if (!indexDataObj[text]) {
+  //   array = 'no result found'
+  //   kuromoji
+  //     .builder({ dicPath: './src/json/dict' })
+  //     .build(function (err, tokenizer) {
+  //       // tokenizer is ready
+
+  //       array = getResult(() => tokenizer.tokenize('待っている'))
+  //     })
+  // } else {
+  //   return
+  //   //array = getResult(text)
+  // }
+
+  // monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
+  //return { answer: array, answer2: monoLangAns }
 }
 
-//runReader('学校') // Example usage
+console.log(runReader('待って')) // Example usage
+
+module.exports = { runReader }
