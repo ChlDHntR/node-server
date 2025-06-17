@@ -98,5 +98,5 @@ const runReader = (text) => {
 
 //console.log(runReader('たい')) // Example usage
 
-module.exports = { runReader, runAnalyzer }
+module.exports = { runReader }
 
