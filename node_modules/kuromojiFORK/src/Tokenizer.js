@@ -64,14 +64,14 @@ Tokenizer.splitByPunctuation = function (input) {
  * @param {string} text Input text to analyze
  * @returns {Array} Tokens
  */
-Tokenizer.prototype.tokenize = function (text) {
+Tokenizer.prototype.tokenize = function (text, callback) {
     var sentences = Tokenizer.splitByPunctuation(text);
     var tokens = [];
     for (var i = 0; i < sentences.length; i++) {
         var sentence = sentences[i];
         this.tokenizeForSentence(sentence, tokens);
     }
-    return tokens;
+    return callback(tokens)
 };
 
 Tokenizer.prototype.tokenizeForSentence = function (sentence, tokens) {

@@ -9,23 +9,27 @@
 // app.listen(PORT)
 // console.log(`Server running on port ${PORT}`)
 const { config } = require('dotenv')
-const { runReader } = require('./jsonReader.js')
+//const { runReader } = require('./jsonReader.js')
 const express = require('express')
 const cors = require('cors')
-const { fileURLToPath } =  require('url')
-const { dirname } = require('path')
+// const { fileURLToPath } =  require('url')
+// const { dirname } = require('path')
+const { runReader, runAnalyzer } = require('./jsonReader.js')
 const path = require('path')
+const kuromoji = require('kuromojiFORK')
 
 config() // Load environment variables from .env file
 
+//console.log(__filename)
+
 //const express = require('express')
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+//const __filename = fileURLToPath(import.meta.url)
+//const __dirname = dirname(filename)
 const app = express()
 
-  const list = {
-    list: ['book', 'makeine4', 'makeine5']
-  }
+const list = {
+  list: ['book', 'makeine4', 'makeine5'],
+}
 
 // Middleware
 const unknownEndpoint = (req, res) => {
@@ -36,7 +40,8 @@ const unknownEndpoint = (req, res) => {
 app.use(cors()) // middleware to allow cross-origin requests
 
 const generateId = () => {
-  const maxId = notes.length > 0 ? Math.max(...notes.map((n) => Number(n.id))) : 0
+  const maxId =
+    notes.length > 0 ? Math.max(...notes.map((n) => Number(n.id))) : 0
   return String(maxId + 1)
 }
 
@@ -94,7 +99,21 @@ app.post('/api/search', (req, res) => {
   }
 
   const word = req.body.content
-  res.json(runReader(word))
+  if (runReader(word).answer !== 'no result found') {
+    res.json([{ basic_form: '*', runreader: runReader(word)}])
+    return
+  }
+
+  runAnalyzer(word, (token) => {
+    let arr = []
+      token.forEach((item) =>
+        arr.push({
+          basic_form: item.basic_form,
+          runreader: runReader(item.basic_form),
+        })
+      )
+      res.json(arr)
+  })
 })
 
 app.post('/api/notes', (req, res) => {
