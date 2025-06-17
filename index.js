@@ -14,9 +14,9 @@ const express = require('express')
 const cors = require('cors')
 // const { fileURLToPath } =  require('url')
 // const { dirname } = require('path')
-const { runReader, runAnalyzer } = require('./jsonReader.js')
+const { runReader } = require('./jsonReader.js')
 const path = require('path')
-const kuromoji = require('kuromojiFORK')
+//const kuromoji = require('kuromojiFORK')
 
 config() // Load environment variables from .env file
 
@@ -99,21 +99,7 @@ app.post('/api/search', (req, res) => {
   }
 
   const word = req.body.content
-  if (runReader(word).answer !== 'no result found') {
-    res.json([{ basic_form: '*', runreader: runReader(word)}])
-    return
-  }
-
-  runAnalyzer(word, (token) => {
-    let arr = []
-      token.forEach((item) =>
-        arr.push({
-          basic_form: item.basic_form,
-          runreader: runReader(item.basic_form),
-        })
-      )
-      res.json(arr)
-  })
+  res.json(runReader(word))
 })
 
 app.post('/api/notes', (req, res) => {
