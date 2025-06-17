@@ -1,4 +1,5 @@
-import * as fs from 'fs'
+const fs = require('fs')
+const kuromoji = require('kuromojiFORK')
 
 let indexData, allData, kanaData, kanjiData, monoLangData
 
@@ -31,11 +32,24 @@ const wordList = (array) => {
   return final
 }
 
-function containsKanji(str) {
-  return /[\u4E00-\u9FAF]/.test(str)
+// function containsKanji(str) {
+//   return /[\u4E00-\u9FAF]/.test(str)
+// }
+
+const runAnalyzer = (text, method) => {
+  let tokenValue
+  kuromoji
+    .builder({ dicPath: './src/json/dict' })
+    .build(function (err, tokenizer) {
+      // tokenizer is ready
+      var path = tokenizer.tokenize(text, (token) => {
+        method(token)
+      })
+    })
 }
 
-export const runReader = (text) => {
+
+const runReader = (text) => {
   let monoLangAns = 'no result found'
   let array
   // if (containsKanji(text)) {
@@ -81,4 +95,8 @@ export const runReader = (text) => {
 
   return { answer: array, answer2: monoLangAns }
 }
+
+//console.log(runReader('たい')) // Example usage
+
+module.exports = { runReader, runAnalyzer }
 
