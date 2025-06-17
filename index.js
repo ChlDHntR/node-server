@@ -16,7 +16,7 @@ const cors = require('cors')
 // const { dirname } = require('path')
 const { runReader } = require('./jsonReader.js')
 const path = require('path')
-const kuromoji = require('kuromojiFORK')
+//const kuromoji = require('kuromojiFORK')
 
 config() // Load environment variables from .env file
 

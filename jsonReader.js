@@ -1,5 +1,5 @@
 const fs = require('fs')
-const kuromoji = require('kuromojiFORK')
+//const kuromoji = require('kuromojiFORK')
 
 let indexData, allData, kanaData, kanjiData, monoLangData
 
@@ -36,17 +36,17 @@ const wordList = (array) => {
 //   return /[\u4E00-\u9FAF]/.test(str)
 // }
 
-const runAnalyzer = (text, method) => {
-  let tokenValue
-  kuromoji
-    .builder({ dicPath: './src/json/dict' })
-    .build(function (err, tokenizer) {
-      // tokenizer is ready
-      var path = tokenizer.tokenize(text, (token) => {
-        method(token)
-      })
-    })
-}
+// const runAnalyzer = (text, method) => {
+//   let tokenValue
+//   kuromoji
+//     .builder({ dicPath: './src/json/dict' })
+//     .build(function (err, tokenizer) {
+//       // tokenizer is ready
+//       var path = tokenizer.tokenize(text, (token) => {
+//         method(token)
+//       })
+//     })
+// }
 
 
 const runReader = (text) => {
