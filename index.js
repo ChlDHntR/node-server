@@ -9,23 +9,14 @@
 // app.listen(PORT)
 // console.log(`Server running on port ${PORT}`)
 const { config } = require('dotenv')
-//const { runReader } = require('./jsonReader.js')
 const express = require('express')
 const cors = require('cors')
-// const { fileURLToPath } =  require('url')
-// const { dirname } = require('path')
 const { runReader } = require('./jsonReader.js')
 const path = require('path')
 const { tokenize } = require('kuromojin')
-//const kuromoji = require('kuromojiFORK')
 
 config() // Load environment variables from .env file
 
-//console.log(__filename)
-
-//const express = require('express')
-//const __filename = fileURLToPath(import.meta.url)
-//const __dirname = dirname(filename)
 const app = express()
 
 const list = {
@@ -89,20 +80,33 @@ app.delete('/api/notes/:id', (req, res) => {
   res.status(204).end()
 })
 
-app.post('/api/search', (req, res) => {
+app.post('/api/analyze', (req, res) => {
   const body = req.body
 
-  if (!body.content) {
+  if (!body) {
     return res.status(400).json({
       error: 'content missing',
     })
   }
 
-  tokenize(body.content).then((token) => {
-    console.log(token)
+  const ret = { analyze: [], runReader: [] }
+  let test = runReader(body.content)
 
-    const word = req.body.content
-    res.json(runReader(word))
+  if (test.answer !== 'no result found') {
+    ret.runReader.push(test)
+    ret.analyze.push({ basic_form: '', surface_form: body.content })
+    res.json(ret)
+    return
+  }
+
+  tokenize(body.content).then((token) => {
+    let resArr = token.map(({ surface_form, basic_form }) => {
+      ret.runReader.push(runReader(basic_form))
+      return { surface_form, basic_form }
+    })
+    ret.analyze = resArr
+
+    res.json(ret)
   })
 })
 
