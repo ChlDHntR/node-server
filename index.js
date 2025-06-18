@@ -16,6 +16,7 @@ const cors = require('cors')
 // const { dirname } = require('path')
 const { runReader } = require('./jsonReader.js')
 const path = require('path')
+const { tokenize } = require('kuromojin')
 //const kuromoji = require('kuromojiFORK')
 
 config() // Load environment variables from .env file
@@ -40,8 +41,7 @@ const unknownEndpoint = (req, res) => {
 app.use(cors()) // middleware to allow cross-origin requests
 
 const generateId = () => {
-  const maxId =
-    notes.length > 0 ? Math.max(...notes.map((n) => Number(n.id))) : 0
+  const maxId = notes.length > 0 ? Math.max(...notes.map((n) => Number(n.id))) : 0
   return String(maxId + 1)
 }
 
@@ -98,8 +98,12 @@ app.post('/api/search', (req, res) => {
     })
   }
 
-  const word = req.body.content
-  res.json(runReader(word))
+  tokenize(body.content).then((token) => {
+    console.log(token)
+
+    const word = req.body.content
+    res.json(runReader(word))
+  })
 })
 
 app.post('/api/notes', (req, res) => {
