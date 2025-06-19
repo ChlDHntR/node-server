@@ -20,7 +20,7 @@ config() // Load environment variables from .env file
 const app = express()
 
 const list = {
-  list: ['book', 'makeine4', 'makeine5'],
+  list: ['makeine4', 'makeine5'],
 }
 
 // Middleware
