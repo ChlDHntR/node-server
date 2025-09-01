@@ -1,27 +1,14 @@
-// const http = require('http')
-
-// const app = http.createServer((request, response) => {
-//   response.writeHead(200, { 'Content-Type': 'text/plain' })
-//   response.end('Hello World')
-// })
-
-// const PORT = 3003
-// app.listen(PORT)
-// console.log(`Server running on port ${PORT}`)
 const { config } = require('dotenv')
 const express = require('express')
 const cors = require('cors')
 const { runReader } = require('./jsonReader.js')
 const path = require('path')
 const { tokenize } = require('kuromojin')
+const bookList = require('./src/store/store.js')
 
 config() // Load environment variables from .env file
 
 const app = express()
-
-const list = {
-  list: ['makeine4', 'makeine5'],
-}
 
 // Middleware
 const unknownEndpoint = (req, res) => {
@@ -71,7 +58,7 @@ app.get('/api/notes', (req, res) => {
 })
 
 app.get('/api/booklist', (req, res) => {
-  res.json(list)
+  res.json(bookList)
 })
 
 app.delete('/api/notes/:id', (req, res) => {
