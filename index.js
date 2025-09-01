@@ -4,9 +4,11 @@ const cors = require('cors')
 const { runReader } = require('./jsonReader.js')
 const path = require('path')
 const { tokenize } = require('kuromojin')
-const bookList = require('./src/store/store.js')
+const { bookList } = require('./src/store/store.js')
 
 config() // Load environment variables from .env file
+
+console.log(bookList)
 
 const app = express()
 
