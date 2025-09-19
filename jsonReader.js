@@ -52,31 +52,14 @@ const wordList = (array) => {
 const runReader = (text) => {
   let monoLangAns = 'no result found'
   let array
-  // if (containsKanji(text)) {
-  //   for (let i = 0; i <= kanjiDataObj.words.length - 1; i++) {
-  //     if (kanjiDataObj.words[i][0].includes(text)) {
-  //       //console.log(`found ${text} at index ${i}`)
-  //       index = i
-  //       break
-  //     }
-  //   }
-  // } else {
-  //   for (let i = 0; i <= allDataObj.words.length - 1; i++) {
-  //     if (kanjiDataObj.words[i][1].includes(text)) {
-  //       //console.log(`found ${text} at index ${i}`)
-  //       index = i
-  //       break
-  //     }
-  //   }
-  // }
-
-  // if (!indexDataObj[text] && !monoLangObj[text]) {
-  //   return 'no result found'
-  // }
+  /* status avoid sending bad response */
+  let status = false
 
   if (!indexDataObj[text]) {
     array = 'no result found'
+    //array = []
   } else {
+    status = true
     array = []
     indexDataObj[text].forEach((index) => {
       let kanaResult = kanaDataObj.words[index]
@@ -93,7 +76,7 @@ const runReader = (text) => {
 
   monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
 
-  return { answer: array, answer2: monoLangAns }
+  return { answer: array, answer2: monoLangAns, status: status }
 }
 
 //console.log(runReader('たい')) // Example usage
