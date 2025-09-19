@@ -5,6 +5,7 @@ const { runReader } = require('./jsonReader.js')
 const path = require('path')
 const { tokenize } = require('kuromojin')
 const { bookList } = require('./src/store/store.js')
+const { error } = require('console')
 
 config() // Load environment variables from .env file
 
@@ -95,6 +96,14 @@ app.post('/api/analyze', (req, res) => {
     })
     ret.analyze = resArr
 
+    res.json(ret)
+  }).catch(err => {
+    /* 
+      NEWEST change here
+      handle tokenize error 
+    */
+    ret.runReader.push(test)
+    ret.analyze.push({ basic_form: '', surface_form: body.content })
     res.json(ret)
   })
 })
