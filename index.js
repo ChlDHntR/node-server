@@ -26,23 +26,6 @@ const generateId = () => {
   return String(maxId + 1)
 }
 
-const notes = [
-  {
-    id: '1',
-    content: 'HTML is easy',
-    important: true,
-  },
-  {
-    id: '2',
-    content: 'Browser can execute only JavaScript',
-    important: false,
-  },
-  {
-    id: '3',
-    content: 'GET and POST are the most important methods of HTTP protocol',
-    important: true,
-  },
-]
 console.log(path.join(__dirname, 'public/book1'))
 
 app.use('/book1', express.static(path.join(__dirname, 'public/book1')))
@@ -56,18 +39,8 @@ app.get('/home', (req, res) => {
   res.send('<h1> Hello World 2 </h1>')
 })
 
-app.get('/api/notes', (req, res) => {
-  res.json(notes)
-})
-
 app.get('/api/booklist', (req, res) => {
   res.json(bookList)
-})
-
-app.delete('/api/notes/:id', (req, res) => {
-  const id = req.params.id
-  notes = notes.filter((note) => note.id !== id)
-  res.status(204).end()
 })
 
 app.post('/api/analyze', (req, res) => {
