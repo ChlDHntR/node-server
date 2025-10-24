@@ -1,17 +1,17 @@
-import * as fs from 'fs'
+const fs = require('fs')
 
 const runWriter = async () => {
-  const obj = {}
+  const retObj = {}
 
-  for (let i = 1; i <= 10; i++) {
-    let dat = fs.readFileSync(`./src/json/monolang/term_bank_${i}.json`)
+  for (let i = 1; i <= 2; i++) {
+    let dat = fs.readFileSync(`./src/json/hantu/kanji_bank_${i}.json`)
     const arrChild = JSON.parse(dat)
-    arrChild.forEach((element) => {
-      obj[element[0]] = element[5][0] 
+    arrChild.forEach((el) => {
+      retObj[el[0]] = [el[1],el[4]]
     })
   }
-  const jsonDat = JSON.stringify(obj)
-  fs.writeFile('./src/json/monolang/map.json', jsonDat, (err) => {
+  const jsonDat = JSON.stringify(retObj)
+  fs.writeFile('./src/json/hantu.json', jsonDat, (err) => {
         if (err) {
           console.error(err)
           return
