@@ -35,8 +35,10 @@ app.post('/api/analyze', (req, res) => {
   //   })
   // }
 
+  let text = req.body.content
+
   const ret = { analyze: [], runReader: [] }
-  let test = runReader(body.content)
+  let test = runReader(text)
 
   if (test.status) {
     ret.runReader.push(test)
@@ -45,7 +47,7 @@ app.post('/api/analyze', (req, res) => {
     return
   }
 
-  tokenize(body.content)
+  tokenize(text)
     .then((token) => {
       let resArr = token.map(({ surface_form, basic_form }) => {
         ret.runReader.push(runReader(basic_form))
