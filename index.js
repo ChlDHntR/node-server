@@ -42,7 +42,7 @@ app.post('/api/analyze', (req, res) => {
 
   if (test.status) {
     ret.runReader.push(test)
-    ret.analyze.push({ basic_form: '', surface_form: body.content })
+    ret.analyze.push({ basic_form: '', surface_form: text })
     res.json(ret)
     return
   }
@@ -63,7 +63,7 @@ app.post('/api/analyze', (req, res) => {
       handle tokenize error 
     */
       ret.runReader.push(test)
-      ret.analyze.push({ basic_form: '', surface_form: body.content })
+      ret.analyze.push({ basic_form: '', surface_form: text })
       res.json(ret)
     })
 })
