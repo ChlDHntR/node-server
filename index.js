@@ -4,12 +4,8 @@ const cors = require('cors')
 const { runReader } = require('./jsonReader.js')
 const path = require('path')
 const { tokenize } = require('kuromojin')
-const { bookList } = require('./src/store/store.js')
-const { error } = require('console')
 
 config() // Load environment variables from .env file
-
-console.log(bookList)
 
 const app = express()
 
@@ -21,84 +17,53 @@ const unknownEndpoint = (req, res) => {
 //const cors = require('cors')
 app.use(cors()) // middleware to allow cross-origin requests
 
-const generateId = () => {
-  const maxId = notes.length > 0 ? Math.max(...notes.map((n) => Number(n.id))) : 0
-  return String(maxId + 1)
-}
-
-console.log(path.join(__dirname, 'public/book1'))
-
 app.use('/book1', express.static(path.join(__dirname, 'public/book1')))
-app.get('/view-epub', (req, res) => {
-  const filePath = path.join(__dirname, 'src', 'json', 'test.epub')
-  res.sendFile(filePath)
-})
 
 app.use(express.json()) // middleware to parse JSON bodies
-app.get('/home', (req, res) => {
-  res.send('<h1> Hello World 2 </h1>')
-})
 
 app.get('/api/booklist', (req, res) => {
+  let bookList = ['makeine4', 'makeine5', 'amamori1', 'amamori2']
   res.json(bookList)
 })
 
 app.post('/api/analyze', (req, res) => {
-  const body = req.body
+  // const body = req.body
 
-  if (!body) {
-    return res.status(400).json({
-      error: 'content missing',
-    })
-  }
+  // if (!body) {
+  //   return res.status(400).json({
+  //     error: 'content missing',
+  //   })
+  // }
 
   const ret = { analyze: [], runReader: [] }
   let test = runReader(body.content)
 
-  if (test.answer !== 'no result found') {
+  if (test.status) {
     ret.runReader.push(test)
     ret.analyze.push({ basic_form: '', surface_form: body.content })
     res.json(ret)
     return
   }
 
-  tokenize(body.content).then((token) => {
-    let resArr = token.map(({ surface_form, basic_form }) => {
-      ret.runReader.push(runReader(basic_form))
-      return { surface_form, basic_form }
-    })
-    ret.analyze = resArr
+  tokenize(body.content)
+    .then((token) => {
+      let resArr = token.map(({ surface_form, basic_form }) => {
+        ret.runReader.push(runReader(basic_form))
+        return { surface_form, basic_form }
+      })
+      ret.analyze = resArr
 
-    res.json(ret)
-  }).catch(err => {
-    /* 
+      res.json(ret)
+    })
+    .catch((err) => {
+      /* 
       NEWEST change here
       handle tokenize error 
     */
-    ret.runReader.push(test)
-    ret.analyze.push({ basic_form: '', surface_form: body.content })
-    res.json(ret)
-  })
-})
-
-app.post('/api/notes', (req, res) => {
-  const body = req.body
-
-  if (!body.content) {
-    return res.status(400).json({
-      error: 'content missing',
+      ret.runReader.push(test)
+      ret.analyze.push({ basic_form: '', surface_form: body.content })
+      res.json(ret)
     })
-  }
-
-  const note = {
-    content: body.content,
-    important: Boolean(body.important) || false,
-    id: generateId(),
-  }
-
-  notes = notes.concat(note)
-
-  res.json(note)
 })
 
 app.use(unknownEndpoint)

@@ -19,10 +19,6 @@ const kanaDataObj = JSON.parse(kanaData)
 const kanjiDataObj = JSON.parse(kanjiData)
 const monoLangObj = JSON.parse(monoLangData)
 
-const mapFunc = (arr, key) => {
-  return arr.map((entry) => entry[key])
-}
-
 // Form list of definitions
 const wordList = (array) => {
   let final = {}
@@ -48,15 +44,13 @@ const wordList = (array) => {
 //     })
 // }
 
-
 const runReader = (text) => {
-  let monoLangAns = 'no result found'
   let array
   /* status avoid sending bad response */
   let status = false
 
   if (!indexDataObj[text]) {
-    array = 'no result found'
+    array = ['no result found']
     //array = []
   } else {
     status = true
@@ -74,7 +68,7 @@ const runReader = (text) => {
     })
   }
 
-  monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
+  let monoLangAns = monoLangObj[text] ? monoLangObj[text] : 'no result found'
 
   return { answer: array, answer2: monoLangAns, status: status }
 }
@@ -82,4 +76,3 @@ const runReader = (text) => {
 //console.log(runReader('たい')) // Example usage
 
 module.exports = { runReader }
-
