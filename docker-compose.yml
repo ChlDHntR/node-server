@@ -1,0 +1,12 @@
+services:
+  backend:
+    build: .
+    image: reader-translate-api
+    container_name: reader-translate-api
+    restart: unless-stopped
+    # Reads ANTHROPIC_API_KEY (and optionally PORT) from .env on the host.
+    # This file is NOT copied into the image — it stays on the EC2 host.
+    env_file:
+      - .env
+    ports:
+      - "3003:3003"

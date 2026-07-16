@@ -1,1 +1,0 @@
-const kuromoji = require('@sglkc/kuromoji')

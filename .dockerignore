@@ -1,0 +1,22 @@
+# Dependencies are reinstalled from the lockfile inside the image
+node_modules
+
+# Secrets are injected at runtime, never baked into the image
+.env
+.env.*
+
+# VCS / meta
+.git
+.gitignore
+README.md
+wiki
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Dev-only / scratch scripts not used by the server
+lol.js
+test.js
+jsonWriter.js
