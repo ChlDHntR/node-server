@@ -8,5 +8,7 @@ services:
     # This file is NOT copied into the image — it stays on the EC2 host.
     env_file:
       - .env
+    # Bound to loopback only — Apache on the host reverse-proxies to it.
+    # Nothing reaches the container except through Apache (80/443).
     ports:
-      - "3003:3003"
+      - "127.0.0.1:3003:3003"
